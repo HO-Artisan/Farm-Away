@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 @SuppressWarnings("unused")
 public class FABlocks {
-	private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(FarmAway.ID);
+	private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(FarmAway.MOD_ID);
 
 	// Farmlands
 	public static final DeferredBlock<FarmlandBlock> STONE_FARMLAND = registerFarmland("stone_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), FarmlandBlock.Type.TERRA);
