@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class FAItems {
-	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(FarmAway.MOD_ID);
+	private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(FarmAway.MOD_ID);
 	// Tools
 	public static final DeferredItem<EnhancedHoeItem> ENHANCED_HOE = ITEMS.register("enhanced_hoe", EnhancedHoeItem::new);
 
