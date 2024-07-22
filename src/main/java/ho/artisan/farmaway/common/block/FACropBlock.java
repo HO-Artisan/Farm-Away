@@ -7,22 +7,29 @@ import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class FACropBlock extends CropBlock {
-    public FACropBlock(Properties properties) {
+    private final int max_age;
+    public FACropBlock(Properties properties, int max_age) {
         super(properties);
+        this.max_age = max_age;
     }
 
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         if (level.getBlockState(pos.below()).getBlock() instanceof FarmlandBlock farmland) {
             return switch (farmland.type) {
-                case TERRA -> state.is(FATags.TERRA_CROP);
-                case FLAME -> state.is(FATags.FLAME_CROP);
-                case SHADOW -> state.is(FATags.SHADOW_CROP);
-                case SCARLET -> state.is(FATags.SCARLET_CROP);
-                case RAY -> state.is(FATags.RAY_CROP);
-                case WIND -> state.is(FATags.WIND_CROP);
+                case TERRA -> state.is(FATags.TERRA_CROPS);
+                case FLAME -> state.is(FATags.FLAME_CROPS);
+                case SHADOW -> state.is(FATags.SHADOW_CROPS);
+                case SCARLET -> state.is(FATags.SCARLET_CROPS);
+                case RAY -> state.is(FATags.RAY_CROPS);
+                case WIND -> state.is(FATags.WIND_CROPS);
             };
         }
         return false;
+    }
+
+    @Override
+    public int getMaxAge() {
+        return this.max_age;
     }
 }

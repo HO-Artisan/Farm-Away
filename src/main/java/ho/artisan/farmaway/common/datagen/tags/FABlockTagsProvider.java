@@ -26,23 +26,5 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 				FABlocks.ANDESITE_FARMLAND.get(),
 				FABlocks.DIORITE_FARMLAND.get()
 		);
-		tag(FATags.TERRA_CROP).add(
-				FABlocks.STONE_FARMLAND.get()
-		);
-		tag(FATags.FLAME_CROP).add(
-				FABlocks.NETHERRACK_FARMLAND.get()
-		);
-		tag(FATags.SCARLET_CROP).add(
-				FABlocks.GRANITE_FARMLAND.get()
-		);
-		tag(FATags.WIND_CROP).add(
-				FABlocks.DIORITE_FARMLAND.get()
-		);
-		tag(FATags.SHADOW_CROP).add(
-				FABlocks.END_STONE_FARMLAND.get()
-		);
-		tag(FATags.RAY_CROP).add(
-				FABlocks.ANDESITE_FARMLAND.get()
-		);
 	}
 }

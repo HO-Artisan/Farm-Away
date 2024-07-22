@@ -2,6 +2,7 @@ package ho.artisan.farmaway.common.registry;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.item.EnhancedHoeItem;
+import ho.artisan.farmaway.common.item.ExplosionPotatoItem;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
@@ -22,11 +23,11 @@ public class FAItems {
 	public static final DeferredItem<BlockItem> GRANITE_FARMLAND = registerBlock(FABlocks.GRANITE_FARMLAND);
 	public static final DeferredItem<BlockItem> ANDESITE_FARMLAND = registerBlock(FABlocks.ANDESITE_FARMLAND);
 	public static final DeferredItem<BlockItem> DIORITE_FARMLAND = registerBlock(FABlocks.DIORITE_FARMLAND);
+	public static final DeferredItem<ExplosionPotatoItem> EXPLOSION_POTATO = ITEMS.register("explosion_potato", () -> new ExplosionPotatoItem(new Item.Properties()));
 
 	public static DeferredItem<BlockItem> registerBlock(DeferredBlock<? extends Block> block) {
 		return ITEMS.registerSimpleBlockItem(block);
 	}
-
 	public static void register(IEventBus bus) {
 		ITEMS.register(bus);
 	}
