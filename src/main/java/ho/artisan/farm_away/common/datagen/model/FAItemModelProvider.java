@@ -19,6 +19,12 @@ public class FAItemModelProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		handheld(FAItems.ENHANCED_HOE.get());
+		block(FAItems.STONE_FARMLAND.get());
+		block(FAItems.NETHERRACK_FARMLAND.get());
+		block(FAItems.END_STONE_FARMLAND.get());
+		block(FAItems.GRANITE_FARMLAND.get());
+		block(FAItems.DIORITE_FARMLAND.get());
+		block(FAItems.ANDESITE_FARMLAND.get());
 	}
 
 	private void block(Item item) {
