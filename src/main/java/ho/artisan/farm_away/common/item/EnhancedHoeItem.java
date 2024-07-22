@@ -11,8 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -35,10 +34,10 @@ public class EnhancedHoeItem extends HoeItem {
 			Pair.of(HoeItem::onlyIfAirAbove, successful(FABlocks.END_STONE_FARMLAND.get().defaultBlockState())),
 			Blocks.GRANITE,
 			Pair.of(HoeItem::onlyIfAirAbove, successful(FABlocks.GRANITE_FARMLAND.get().defaultBlockState())),
-			Blocks.DIORITE,
-			Pair.of(HoeItem::onlyIfAirAbove, successful(FABlocks.DIORITE_FARMLAND.get().defaultBlockState())),
 			Blocks.ANDESITE,
-			Pair.of(HoeItem::onlyIfAirAbove, successful(FABlocks.ANDESITE_FARMLAND.get().defaultBlockState()))
+			Pair.of(HoeItem::onlyIfAirAbove, successful(FABlocks.ANDESITE_FARMLAND.get().defaultBlockState())),
+			Blocks.DIORITE,
+			Pair.of(HoeItem::onlyIfAirAbove, successful(FABlocks.DIORITE_FARMLAND.get().defaultBlockState()))
 		)
 	);
 	protected static final Map<Block, Pair<Predicate<UseOnContext>, Consumer<UseOnContext>>> VANILLA_TILLING_ACTIONS = Maps.newHashMap(
@@ -54,8 +53,8 @@ public class EnhancedHoeItem extends HoeItem {
 		)
 	);
 
-	public EnhancedHoeItem() {
-		super(Tiers.NETHERITE, new Item.Properties().fireResistant().attributes(HoeItem.createAttributes(Tiers.NETHERITE, -4.0F, 0.0F)));
+	public EnhancedHoeItem(Tier tier, Properties properties) {
+		super(tier, properties);
 	}
 
 	@Override

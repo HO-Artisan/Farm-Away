@@ -1,0 +1,10 @@
+{
+  "block.farm_away.andesite_farmland": "Andesite Farmland",
+  "block.farm_away.diorite_farmland": "Diorite Farmland",
+  "block.farm_away.end_stone_farmland": "End Stone Farmland",
+  "block.farm_away.granite_farmland": "Granite Farmland",
+  "block.farm_away.netherrack_farmland": "Netherrack Farmland",
+  "block.farm_away.stone_farmland": "Stone Farmland",
+  "item.farm_away.enhanced_hoe": "Enhanced Hoe",
+  "itemGroup.farm_away.main": "Farm Away"
+}

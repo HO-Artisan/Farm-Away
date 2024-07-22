@@ -22,8 +22,8 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 			FABlocks.NETHERRACK_FARMLAND.get(),
 			FABlocks.END_STONE_FARMLAND.get(),
 			FABlocks.GRANITE_FARMLAND.get(),
-			FABlocks.DIORITE_FARMLAND.get(),
-			FABlocks.ANDESITE_FARMLAND.get()
+			FABlocks.ANDESITE_FARMLAND.get(),
+			FABlocks.DIORITE_FARMLAND.get()
 		);
 	}
 }

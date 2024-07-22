@@ -3,6 +3,7 @@ package ho.artisan.farm_away.common.datagen;
 import ho.artisan.farm_away.FarmAway;
 import ho.artisan.farm_away.common.datagen.lang.FAChineseLanguageProvider;
 import ho.artisan.farm_away.common.datagen.lang.FAEnglishLanguageProvider;
+import ho.artisan.farm_away.common.datagen.loot.FALootProvider;
 import ho.artisan.farm_away.common.datagen.model.FABlockStateProvider;
 import ho.artisan.farm_away.common.datagen.model.FAItemModelProvider;
 import ho.artisan.farm_away.common.datagen.tags.FABlockTagsProvider;
@@ -29,11 +30,13 @@ public class DataGenerators {
 		generator.addProvider(event.includeClient(), new FAEnglishLanguageProvider(output));
 		generator.addProvider(event.includeClient(), new FAChineseLanguageProvider(output));
 
-		generator.addProvider(event.includeClient(), new FAItemModelProvider(output, helper));
 		generator.addProvider(event.includeClient(), new FABlockStateProvider(output, helper));
+		generator.addProvider(event.includeClient(), new FAItemModelProvider(output, helper));
 
 		FABlockTagsProvider blockTags = new FABlockTagsProvider(output, lookupProvider, helper);
 		generator.addProvider(event.includeServer(), blockTags);
 		generator.addProvider(event.includeServer(), new FAItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), helper));
+
+		generator.addProvider(event.includeServer(), new FALootProvider(output, lookupProvider));
 	}
 }

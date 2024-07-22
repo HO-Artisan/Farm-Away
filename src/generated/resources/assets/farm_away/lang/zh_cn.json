@@ -1,0 +1,10 @@
+{
+  "block.farm_away.andesite_farmland": "安山岩耕地",
+  "block.farm_away.diorite_farmland": "闪长岩耕地",
+  "block.farm_away.end_stone_farmland": "末地石耕地",
+  "block.farm_away.granite_farmland": "花岗岩耕地",
+  "block.farm_away.netherrack_farmland": "下界岩耕地",
+  "block.farm_away.stone_farmland": "石耕地",
+  "item.farm_away.enhanced_hoe": "强化锄",
+  "itemGroup.farm_away.main": "田园巫术"
+}

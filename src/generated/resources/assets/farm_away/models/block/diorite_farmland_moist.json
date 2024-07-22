@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "minecraft:block/diorite",
+    "top": "farm_away:block/diorite_farmland_moist"
+  }
+}

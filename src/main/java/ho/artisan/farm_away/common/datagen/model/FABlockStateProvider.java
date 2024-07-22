@@ -30,8 +30,8 @@ public class FABlockStateProvider extends BlockStateProvider {
 		farmland(FABlocks.NETHERRACK_FARMLAND.get(), Blocks.NETHERRACK);
 		farmland(FABlocks.END_STONE_FARMLAND.get(), Blocks.END_STONE);
 		farmland(FABlocks.GRANITE_FARMLAND.get(), Blocks.GRANITE);
-		farmland(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
 		farmland(FABlocks.ANDESITE_FARMLAND.get(), Blocks.ANDESITE);
+		farmland(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
 	}
 
 	private void farmland(Block farmland, Block dirt) {

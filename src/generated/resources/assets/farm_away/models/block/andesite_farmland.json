@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_farmland",
+  "textures": {
+    "dirt": "minecraft:block/andesite",
+    "top": "farm_away:block/andesite_farmland"
+  }
+}
