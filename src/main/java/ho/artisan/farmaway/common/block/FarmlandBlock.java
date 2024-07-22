@@ -83,7 +83,7 @@ public class FarmlandBlock extends Block {
 			return;
 		}
 		int i = state.getValue(MOISTURE);
-		if (!isNearFluid(level, pos) && (!level.isRainingAt(pos.above()) && this.type.needsWater())) {
+		if (!isNearFluid(level, pos)) {
 			if (i > 0) {
 				level.setBlock(pos, state.setValue(MOISTURE, i - 1), 2);
 			} else if (!hasCrop(level, pos)) {
@@ -112,7 +112,10 @@ public class FarmlandBlock extends Block {
 		return level.getBlockState(pos.above()).is(BlockTags.MAINTAINS_FARMLAND);
 	}
 
-	private boolean isNearFluid(LevelReader level, BlockPos pos) {
+	private boolean isNearFluid(ServerLevel level, BlockPos pos) {
+		if (level.isRainingAt(pos.above()) && this.type.needsWater()) {
+			return true;
+		}
 		for (BlockPos blockPos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
 			if (level.getFluidState(blockPos).is(FluidTags.WATER) && this.type.needsWater()) {
 				return true;
