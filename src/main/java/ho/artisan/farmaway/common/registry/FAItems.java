@@ -1,7 +1,7 @@
-package ho.artisan.farm_away.common.registry;
+package ho.artisan.farmaway.common.registry;
 
-import ho.artisan.farm_away.FarmAway;
-import ho.artisan.farm_away.common.item.EnhancedHoeItem;
+import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.item.EnhancedHoeItem;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;

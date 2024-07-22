@@ -1,4 +1,4 @@
-package ho.artisan.farm_away.common.block;
+package ho.artisan.farmaway.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

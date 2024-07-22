@@ -1,7 +1,7 @@
-package ho.artisan.farm_away.common.datagen.tags;
+package ho.artisan.farmaway.common.datagen.tags;
 
-import ho.artisan.farm_away.FarmAway;
-import ho.artisan.farm_away.common.registry.FAItems;
+import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;

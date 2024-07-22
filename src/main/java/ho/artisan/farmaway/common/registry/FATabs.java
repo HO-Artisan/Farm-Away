@@ -1,6 +1,6 @@
-package ho.artisan.farm_away.common.registry;
+package ho.artisan.farmaway.common.registry;
 
-import ho.artisan.farm_away.FarmAway;
+import ho.artisan.farmaway.FarmAway;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;

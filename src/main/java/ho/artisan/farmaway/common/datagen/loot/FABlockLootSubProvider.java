@@ -1,7 +1,7 @@
-package ho.artisan.farm_away.common.datagen.loot;
+package ho.artisan.farmaway.common.datagen.loot;
 
-import ho.artisan.farm_away.FarmAway;
-import ho.artisan.farm_away.common.registry.FABlocks;
+import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FABlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;

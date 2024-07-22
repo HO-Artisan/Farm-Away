@@ -1,9 +1,9 @@
-package ho.artisan.farm_away.common.item;
+package ho.artisan.farmaway.common.item;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
-import ho.artisan.farm_away.common.registry.FABlocks;
+import ho.artisan.farmaway.common.registry.FABlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -47,8 +47,6 @@ public class EnhancedHoeItem extends HoeItem {
 			Blocks.DIRT_PATH,
 			Pair.of(HoeItem::onlyIfAirAbove, fail()),
 			Blocks.DIRT,
-			Pair.of(HoeItem::onlyIfAirAbove, fail()),
-			Blocks.COARSE_DIRT,
 			Pair.of(HoeItem::onlyIfAirAbove, fail())
 		)
 	);

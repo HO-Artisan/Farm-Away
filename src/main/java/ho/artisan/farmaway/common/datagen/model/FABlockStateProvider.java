@@ -1,7 +1,7 @@
-package ho.artisan.farm_away.common.datagen.model;
+package ho.artisan.farmaway.common.datagen.model;
 
-import ho.artisan.farm_away.FarmAway;
-import ho.artisan.farm_away.common.registry.FABlocks;
+import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FABlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
