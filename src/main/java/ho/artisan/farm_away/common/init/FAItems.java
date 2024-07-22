@@ -10,6 +10,6 @@ public class FAItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("farm_away");
 
     //Tools
-    public static final Supplier<Item> ENHANCED_HOE = ITEMS.registerItem()
+    //public static final Supplier<Item> ENHANCED_HOE = ITEMS.registerItem()
 
 }
