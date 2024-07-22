@@ -25,12 +25,12 @@ import net.neoforged.neoforge.common.CommonHooks;
 
 import javax.annotation.Nullable;
 
-public class BlockFarmland extends Block {
+public class FarmlandBlock extends Block {
     private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
     public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
     private final Type type;
 
-    public BlockFarmland(Properties properties, Type type) {
+    public FarmlandBlock(Properties properties, Type type) {
         super(properties);
         this.type = type;
     }
