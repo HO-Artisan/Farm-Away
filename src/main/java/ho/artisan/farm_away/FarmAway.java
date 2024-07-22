@@ -1,6 +1,7 @@
 package ho.artisan.farm_away;
 
 import ho.artisan.farm_away.common.init.ModBlocks;
+import ho.artisan.farm_away.common.init.ModItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 
@@ -8,5 +9,6 @@ import net.neoforged.fml.common.Mod;
 public class FarmAway {
     public FarmAway(IEventBus bus) {
         ModBlocks.register(bus);
+        ModItems.register(bus);
     }
 }
