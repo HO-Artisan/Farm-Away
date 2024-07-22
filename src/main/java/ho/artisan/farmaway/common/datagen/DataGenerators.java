@@ -6,7 +6,6 @@ import ho.artisan.farmaway.common.datagen.lang.FAEnglishLanguageProvider;
 import ho.artisan.farmaway.common.datagen.loot.FALootProvider;
 import ho.artisan.farmaway.common.datagen.model.FABlockStateProvider;
 import ho.artisan.farmaway.common.datagen.model.FAItemModelProvider;
-import ho.artisan.farmaway.common.datagen.tags.FABlockTagsProvider;
 import ho.artisan.farmaway.common.datagen.tags.FAItemTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
