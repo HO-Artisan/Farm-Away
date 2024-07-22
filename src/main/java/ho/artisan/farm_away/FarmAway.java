@@ -9,14 +9,14 @@ import net.neoforged.fml.common.Mod;
 
 @Mod(FarmAway.MOD_ID)
 public class FarmAway {
-    public static final String MOD_ID = "farm_away";
+	public static final String MOD_ID = "farm_away";
 
-    public FarmAway(IEventBus bus, ModContainer container) {
-        FABlocks.register(bus);
-        FAItems.register(bus);
-    }
+	public FarmAway(IEventBus bus, ModContainer container) {
+		FABlocks.register(bus);
+		FAItems.register(bus);
+	}
 
-    public static ResourceLocation getResourceLocation(String path) {
-        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
-    }
+	public static ResourceLocation getResourceLocation(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+	}
 }
