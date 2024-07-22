@@ -12,6 +12,7 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
+		add(FarmAway.descriptionId("itemGroup", "main"), "Farm Away");
 		add(FABlocks.STONE_FARMLAND.get(), "Stone Farmland");
 		add(FABlocks.NETHERRACK_FARMLAND.get(), "Netherrack Farmland");
 		add(FABlocks.END_STONE_FARMLAND.get(), "End Stone Farmland");

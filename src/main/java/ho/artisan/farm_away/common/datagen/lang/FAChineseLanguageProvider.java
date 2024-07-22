@@ -12,6 +12,7 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
+		add(FarmAway.descriptionId("itemGroup", "main"), "田园巫术");
 		add(FABlocks.STONE_FARMLAND.get(), "石耕地");
 		add(FABlocks.NETHERRACK_FARMLAND.get(), "下界岩耕地");
 		add(FABlocks.END_STONE_FARMLAND.get(), "末地石耕地");
