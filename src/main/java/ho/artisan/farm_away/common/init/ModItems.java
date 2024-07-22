@@ -1,11 +1,8 @@
 package ho.artisan.farm_away.common.init;
 
-import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.function.Supplier;
-
-public class FAItems {
+public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems("farm_away");
 

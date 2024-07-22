@@ -4,133 +4,167 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FarmBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.piston.MovingPistonBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.CommonHooks;
-import net.neoforged.neoforge.common.FarmlandWaterManager;
-import net.neoforged.neoforge.common.ticket.ChunkTicketManager;
-import net.neoforged.neoforge.common.ticket.SimpleTicket;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.util.Iterator;
 
-public class BlockFarmland extends FarmBlock {
-    private Type type;
+public class BlockFarmland extends Block {
+    private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
+    public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
+    private final Type type;
 
-    public BlockFarmland(Type type) {
-        super(BlockBehaviour.Properties.of()
-                .randomTicks()
-                .strength(1.5f, 6.0f)
-                .sound(SoundType.GRAVEL)
-                .isViewBlocking(BlockFarmland::always)
-                .isSuffocating(BlockFarmland::always)
-        );
+    public BlockFarmland(Properties properties, Type type) {
+        super(properties);
         this.type = type;
+    }
+
+    @Override
+    protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        if (facing == Direction.UP && !state.canSurvive(level, currentPos)) {
+            level.scheduleTick(currentPos, this, 1);
+        }
+        return super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+    }
+
+    @Override
+    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        BlockState blockstate = level.getBlockState(pos.above());
+        return !blockstate.isSolid() || blockstate.getBlock() instanceof FenceGateBlock || blockstate.getBlock() instanceof MovingPistonBlock;
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos())
+                ? this.type.getBlock().defaultBlockState()
+                : super.getStateForPlacement(context);
+    }
+
+    @Override
+    protected boolean useShapeForLightOcclusion(BlockState state) {
+        return true;
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE;
     }
 
     @Override
     protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (!state.canSurvive(level, pos)) {
-            turnToOrigin(null, state, level, pos);
+            setToOrigin(null, state, level, pos);
         }
-
     }
 
     @Override
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (this.type == Type.SHADOW) {
+            return;
+        }
         int i = state.getValue(MOISTURE);
-        if (!isNearWater(level, pos) && !level.isRainingAt(pos.above())) {
+        if (!isNearLiquid(level, pos) && (!level.isRainingAt(pos.above()) && this.type.needWater())) {
             if (i > 0) {
                 level.setBlock(pos, state.setValue(MOISTURE, i - 1), 2);
-            } else if (!shouldMaintainFarmland(level, pos)) {
-                turnToDirt(null, state, level, pos);
+            } else if (!hasCrop(level, pos)) {
+                setToOrigin(null, state, level, pos);
             }
         } else if (i < 7) {
             level.setBlock(pos, state.setValue(MOISTURE, 7), 2);
         }
-
     }
 
     @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-        if (!level.isClientSide && CommonHooks.onFarmlandTrample(level, pos, Blocks.DIRT.defaultBlockState(), fallDistance, entity)) {
-            turnToDirt(entity, state, level, pos);
+        if (!level.isClientSide && CommonHooks.onFarmlandTrample(level, pos, this.type.getBlock().defaultBlockState(), fallDistance, entity)) {
+            setToOrigin(entity, state, level, pos);
         }
-
         super.fallOn(level, state, pos, entity, fallDistance);
     }
 
-    public void turnToOrigin(@Nullable Entity entity, BlockState state, Level level, BlockPos pos) {
-        BlockState blockstate = pushEntitiesUp(state, Type.of(type).defaultBlockState(), level, pos);
+    public void setToOrigin(@Nullable Entity entity, BlockState state, Level level, BlockPos pos) {
+        BlockState blockstate = pushEntitiesUp(state, type.getBlock().defaultBlockState(), level, pos);
         level.setBlockAndUpdate(pos, blockstate);
         level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, blockstate));
     }
 
-    private boolean shouldMaintainFarmland(BlockGetter level, BlockPos pos) {
+    private boolean hasCrop(BlockGetter level, BlockPos pos) {
         return level.getBlockState(pos.above()).is(BlockTags.MAINTAINS_FARMLAND);
     }
 
-    private boolean isNearWater(LevelReader level, BlockPos pos) {
-        BlockState state = level.getBlockState(pos);
-        Iterator var3 = BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4)).iterator();
-
-        BlockPos blockpos;
-        do {
-            if (!var3.hasNext()) {
-                if (type.equals(Type.NETHERRACK)) return false;
-                return FarmlandWaterManager.hasBlockWaterTicket(level, pos);
+    private boolean isNearLiquid(LevelReader level, BlockPos pos) {
+        for (BlockPos blockPos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
+            if (level.getFluidState(blockPos).is(FluidTags.WATER) && this.type.needWater()) {
+                return true;
             }
-
-            blockpos = (BlockPos)var3.next();
-        } while(!state.canBeHydrated(level, pos, level.getFluidState(blockpos), blockpos));
-
-        return true;
+            if (level.getFluidState(blockPos).is(FluidTags.LAVA) && this.type == Type.FLAME) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    private static boolean always(BlockState state, BlockGetter blockGetter, BlockPos pos) {
-        return true;
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(MOISTURE);
+    }
+
+    @Override
+    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
+        return false;
     }
 
     public enum Type {
-        STONE,
-        NETHERRACK,
-        ENDSTONE,
-        GRANITE,
-        DIORITE,
-        ANDESITE;
+        TERRA,
+        FLAME,
+        SHADOW,
+        SCARLET,
+        RAY,
+        WIND;
 
-        public static Block of(Type type) {
-            switch (type) {
-                case NETHERRACK -> {
+        public Block getBlock() {
+            switch (this) {
+                case TERRA -> {
+                    return Blocks.STONE;
+                }
+                case FLAME -> {
                     return Blocks.NETHERRACK;
                 }
-                case ENDSTONE -> {
+                case SHADOW -> {
                     return Blocks.END_STONE;
                 }
-                case GRANITE -> {
+                case SCARLET -> {
                     return Blocks.GRANITE;
                 }
-                case DIORITE -> {
-                    return Blocks.DIORITE;
-                }
-                case ANDESITE -> {
+                case RAY -> {
                     return Blocks.ANDESITE;
                 }
+                case WIND -> {
+                    return Blocks.DIORITE;
+                }
                 default -> {
-                    return  Blocks.STONE;
+                    return Blocks.AIR;
                 }
             }
+        }
+        public boolean needWater() {
+            return this != Type.FLAME && this != Type.SHADOW;
         }
     }
 }
