@@ -1,4 +1,4 @@
-package ho.artisan.farm_away.common.gen.tags;
+package ho.artisan.farm_away.common.datagen.tags;
 
 import ho.artisan.farm_away.FarmAway;
 import ho.artisan.farm_away.common.registry.FAItems;

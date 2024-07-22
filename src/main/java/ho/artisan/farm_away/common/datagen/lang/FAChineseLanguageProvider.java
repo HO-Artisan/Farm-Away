@@ -1,4 +1,4 @@
-package ho.artisan.farm_away.common.gen.lang;
+package ho.artisan.farm_away.common.datagen.lang;
 
 import ho.artisan.farm_away.FarmAway;
 import ho.artisan.farm_away.common.registry.FABlocks;

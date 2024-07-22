@@ -1,12 +1,12 @@
-package ho.artisan.farm_away.common.gen;
+package ho.artisan.farm_away.common.datagen;
 
 import ho.artisan.farm_away.FarmAway;
-import ho.artisan.farm_away.common.gen.lang.FAChineseLanguageProvider;
-import ho.artisan.farm_away.common.gen.lang.FAEnglishLanguageProvider;
-import ho.artisan.farm_away.common.gen.model.FABlockStateProvider;
-import ho.artisan.farm_away.common.gen.model.FAItemModelProvider;
-import ho.artisan.farm_away.common.gen.tags.FABlockTagsProvider;
-import ho.artisan.farm_away.common.gen.tags.FAItemTagsProvider;
+import ho.artisan.farm_away.common.datagen.lang.FAChineseLanguageProvider;
+import ho.artisan.farm_away.common.datagen.lang.FAEnglishLanguageProvider;
+import ho.artisan.farm_away.common.datagen.model.FABlockStateProvider;
+import ho.artisan.farm_away.common.datagen.model.FAItemModelProvider;
+import ho.artisan.farm_away.common.datagen.tags.FABlockTagsProvider;
+import ho.artisan.farm_away.common.datagen.tags.FAItemTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
