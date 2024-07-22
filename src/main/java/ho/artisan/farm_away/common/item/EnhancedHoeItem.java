@@ -99,13 +99,14 @@ public class EnhancedHoeItem extends HoeItem {
 		return useOnContext -> {
 			Level level = useOnContext.getLevel();
 			BlockPos blockPos = useOnContext.getClickedPos();
+			BlockState blockState = level.getBlockState(blockPos);
 			Player player = useOnContext.getPlayer();
-			level.playSound(player, blockPos, SoundEvents.GRAVEL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
 			if (level.isClientSide) {
+				level.levelEvent(player, 2001, blockPos, Block.getId(blockState));
 				return;
 			}
 			level.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 11);
-			level.gameEvent(GameEvent.BLOCK_DESTROY, blockPos, GameEvent.Context.of(player, level.getBlockState(blockPos)));
+			level.gameEvent(GameEvent.BLOCK_DESTROY, blockPos, GameEvent.Context.of(player, blockState));
 			if (player != null) {
 				useOnContext.getItemInHand().hurtAndBreak(3, player, LivingEntity.getSlotForHand(useOnContext.getHand()));
 			}
