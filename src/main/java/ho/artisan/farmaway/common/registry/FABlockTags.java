@@ -3,10 +3,9 @@ package ho.artisan.farmaway.common.registry;
 import ho.artisan.farmaway.FarmAway;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class FATags {
+public class FABlockTags {
 	public static TagKey<Block> FARMLANDS = blockTag("farmlands");
 	public static TagKey<Block> TERRA_FARMLANDS = blockTag("farmlands/terra");
 	public static TagKey<Block> FLAME_FARMLANDS = blockTag("farmlands/flame");
@@ -23,9 +22,6 @@ public class FATags {
     public static TagKey<Block> WIND_CROPS = blockTag("crops/wind");
 
     public static TagKey<Block> blockTag(String name) {
-        return TagKey.create(Registries.BLOCK, FarmAway.getResourceLocation(name));
-    }
-	public static TagKey<Item> itemTag(String name) {
-		return TagKey.create(Registries.ITEM, FarmAway.getResourceLocation(name));
+		return TagKey.create(Registries.BLOCK, FarmAway.getResourceLocation(name));
 	}
 }

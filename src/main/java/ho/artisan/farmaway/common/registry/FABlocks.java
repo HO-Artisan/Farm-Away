@@ -29,8 +29,9 @@ public class FABlocks {
 	public static final DeferredBlock<FarmlandBlock> DIORITE_FARMLAND = registerFarmland("diorite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.DIORITE).randomTicks());
 
 	// Crops
-	public static final DeferredBlock<FACropBlock> EXPLOSION_POTATO = registerCrop("explosion_potato", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 3);
-	public static final DeferredBlock<FACropBlock> BLUE_CARROT = registerCrop("blue_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 3);
+	public static final DeferredBlock<FACropBlock> EXPLOSION_POTATO = registerCrop("explosion_potato", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 7);
+	public static final DeferredBlock<FACropBlock> BLUE_CARROT = registerCrop("blue_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks(), 15);
+	public static final DeferredBlock<FACropBlock> STRONG_CARROT = registerCrop("strong_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks(), 3);
 
 	private static DeferredBlock<FarmlandBlock> registerFarmland(String name, BlockBehaviour.Properties properties) {
 		return BLOCKS.register(name, () -> new FarmlandBlock(properties));

@@ -1,6 +1,6 @@
 package ho.artisan.farmaway.common.block;
 
-import ho.artisan.farmaway.common.registry.FATags;
+import ho.artisan.farmaway.common.registry.FABlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.CropBlock;
@@ -17,12 +17,12 @@ public class FACropBlock extends CropBlock {
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         if (level.getBlockState(pos.below()).getBlock() instanceof FarmlandBlock farmland) {
             return switch (farmland.getType()) {
-                case TERRA -> state.is(FATags.TERRA_CROPS);
-                case FLAME -> state.is(FATags.FLAME_CROPS);
-                case SHADOW -> state.is(FATags.SHADOW_CROPS);
-                case SCARLET -> state.is(FATags.SCARLET_CROPS);
-                case RAY -> state.is(FATags.RAY_CROPS);
-                case WIND -> state.is(FATags.WIND_CROPS);
+                case TERRA -> state.is(FABlockTags.TERRA_CROPS);
+                case FLAME -> state.is(FABlockTags.FLAME_CROPS);
+                case SHADOW -> state.is(FABlockTags.SHADOW_CROPS);
+                case SCARLET -> state.is(FABlockTags.SCARLET_CROPS);
+                case RAY -> state.is(FABlockTags.RAY_CROPS);
+                case WIND -> state.is(FABlockTags.WIND_CROPS);
             };
         }
         return false;

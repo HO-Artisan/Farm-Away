@@ -30,7 +30,7 @@ public class ExplosionPotatoEntity extends ThrowableItemProjectile {
 	protected void onHit(HitResult result) {
 		super.onHit(result);
 		if (!level().isClientSide) {
-			level().explode(this, this.getX(), this.getY(), this.getZ(), 5.0F, true, Level.ExplosionInteraction.TNT);
+			level().explode(this, this.getX(), this.getY(), this.getZ(), 1.5F, true, Level.ExplosionInteraction.TNT);
 			this.discard();
 		}
 	}
