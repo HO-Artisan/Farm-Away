@@ -14,14 +14,14 @@ public class FABlockTags {
 	public static TagKey<Block> RAY_FARMLANDS = blockTag("farmlands/ray");
 	public static TagKey<Block> WIND_FARMLANDS = blockTag("farmlands/wind");
 
-    public static TagKey<Block> TERRA_CROPS = blockTag("crops/terra");
-    public static TagKey<Block> FLAME_CROPS = blockTag("crops/flame");
-    public static TagKey<Block> SHADOW_CROPS = blockTag("crops/shadow");
-    public static TagKey<Block> SCARLET_CROPS = blockTag("crops/scarlet");
-    public static TagKey<Block> RAY_CROPS = blockTag("crops/ray");
-    public static TagKey<Block> WIND_CROPS = blockTag("crops/wind");
+	public static TagKey<Block> TERRA_CROPS = blockTag("crops/terra");
+	public static TagKey<Block> FLAME_CROPS = blockTag("crops/flame");
+	public static TagKey<Block> SHADOW_CROPS = blockTag("crops/shadow");
+	public static TagKey<Block> SCARLET_CROPS = blockTag("crops/scarlet");
+	public static TagKey<Block> RAY_CROPS = blockTag("crops/ray");
+	public static TagKey<Block> WIND_CROPS = blockTag("crops/wind");
 
-    public static TagKey<Block> blockTag(String name) {
+	public static TagKey<Block> blockTag(String name) {
 		return TagKey.create(Registries.BLOCK, FarmAway.getResourceLocation(name));
 	}
 }

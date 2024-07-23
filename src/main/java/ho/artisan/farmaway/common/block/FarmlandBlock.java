@@ -1,6 +1,6 @@
 package ho.artisan.farmaway.common.block;
 
-import ho.artisan.farmaway.common.registry.FATags;
+import ho.artisan.farmaway.common.registry.FABlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -137,22 +137,22 @@ public class FarmlandBlock extends Block {
 	}
 
 	public Type getType() {
-		if (this.defaultBlockState().is(FATags.TERRA_FARMLANDS)) {
+		if (this.defaultBlockState().is(FABlockTags.TERRA_FARMLANDS)) {
 			return Type.TERRA;
 		}
-		if (this.defaultBlockState().is(FATags.FLAME_FARMLANDS)) {
+		if (this.defaultBlockState().is(FABlockTags.FLAME_FARMLANDS)) {
 			return Type.FLAME;
 		}
-		if (this.defaultBlockState().is(FATags.SHADOW_FARMLANDS)) {
+		if (this.defaultBlockState().is(FABlockTags.SHADOW_FARMLANDS)) {
 			return Type.SHADOW;
 		}
-		if (this.defaultBlockState().is(FATags.SCARLET_FARMLANDS)) {
+		if (this.defaultBlockState().is(FABlockTags.SCARLET_FARMLANDS)) {
 			return Type.SCARLET;
 		}
-		if (this.defaultBlockState().is(FATags.RAY_FARMLANDS)) {
+		if (this.defaultBlockState().is(FABlockTags.RAY_FARMLANDS)) {
 			return Type.RAY;
 		}
-		if (this.defaultBlockState().is(FATags.WIND_FARMLANDS)) {
+		if (this.defaultBlockState().is(FABlockTags.WIND_FARMLANDS)) {
 			return Type.WIND;
 		}
 		throw new RuntimeException("Find a farmland without a type");
