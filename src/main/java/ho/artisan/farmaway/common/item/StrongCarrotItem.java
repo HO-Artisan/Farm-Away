@@ -2,9 +2,13 @@ package ho.artisan.farmaway.common.item;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.ItemAbilities;
@@ -22,7 +26,25 @@ public class StrongCarrotItem extends BlockItem {
 	}
 
 	@Override
+	public InteractionResult useOn(UseOnContext context) {
+		if (context.getPlayer() == null || !context.getPlayer().getItemInHand(context.getHand()).isDamaged()) {
+			return super.useOn(context);
+		}
+		return InteractionResult.PASS;
+	}
+
+	@Override
+	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		return true;
+	}
+
+	@Override
+	public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+		stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+	}
+
+	@Override
 	public boolean canPerformAction(ItemStack stack, ItemAbility itemAbility) {
-		return super.canPerformAction(stack, itemAbility) || ItemAbilities.DEFAULT_SWORD_ACTIONS.contains(itemAbility);
+		return ItemAbilities.DEFAULT_SWORD_ACTIONS.contains(itemAbility);
 	}
 }

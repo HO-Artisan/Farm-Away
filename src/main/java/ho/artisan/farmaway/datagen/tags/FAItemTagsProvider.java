@@ -19,6 +19,9 @@ public class FAItemTagsProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider lookupProvider) {
+		tag(ItemTags.SWORDS).add(
+			FAItems.STRONG_CARROT.get()
+		);
 		tag(ItemTags.HOES).add(
 			FAItems.ENHANCED_HOE.get()
 		);
