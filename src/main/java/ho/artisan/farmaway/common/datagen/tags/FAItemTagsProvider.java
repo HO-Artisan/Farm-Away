@@ -25,5 +25,8 @@ public class FAItemTagsProvider extends ItemTagsProvider {
 		tag(FAItemTags.FLAME_SEEDS).add(
 			FAItems.EXPLOSION_POTATO.get()
 		);
+		tag(FAItemTags.SHADOW_SEEDS).add(
+			FAItems.BLUES_CARROT.get()
+		);
 	}
 }

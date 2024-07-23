@@ -26,6 +26,7 @@ public class FAItemModelProvider extends ItemModelProvider {
 		block(FAItems.DIORITE_FARMLAND.get());
 		block(FAItems.ANDESITE_FARMLAND.get());
 		basicItem(FAItems.EXPLOSION_POTATO.get());
+		basicItem(FAItems.BLUES_CARROT.get());
 		handheld(FAItems.STRONG_CARROT.get());
 	}
 

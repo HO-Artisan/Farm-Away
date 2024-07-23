@@ -1,9 +1,6 @@
 package ho.artisan.farmaway;
 
-import ho.artisan.farmaway.common.registry.FABlocks;
-import ho.artisan.farmaway.common.registry.FAEntities;
-import ho.artisan.farmaway.common.registry.FAItems;
-import ho.artisan.farmaway.common.registry.FATabs;
+import ho.artisan.farmaway.common.registry.*;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +20,7 @@ public class FarmAway {
 		FAItems.register(bus);
 		FATabs.register(bus);
 		FAEntities.register(bus);
+		FAEffects.register(bus);
 	}
 
 	public static ResourceLocation getResourceLocation(String path) {

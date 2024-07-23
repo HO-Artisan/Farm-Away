@@ -31,7 +31,7 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 			FABlocks.STRONG_CARROT.get()
 		);
 		tag(FABlockTags.SHADOW_CROPS).add(
-			FABlocks.BLUE_CARROT.get()
+			FABlocks.BLUES_CARROT.get()
 		);
 		tag(FABlockTags.TERRA_FARMLANDS).add(FABlocks.STONE_FARMLAND.get());
 		tag(FABlockTags.FLAME_FARMLANDS).add(FABlocks.NETHERRACK_FARMLAND.get());

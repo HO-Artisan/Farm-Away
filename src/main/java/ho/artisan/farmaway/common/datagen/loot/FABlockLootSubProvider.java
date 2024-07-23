@@ -27,7 +27,7 @@ public class FABlockLootSubProvider extends BlockLootSubProvider {
 		dropOther(FABlocks.ANDESITE_FARMLAND.get(), Blocks.ANDESITE);
 		dropOther(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
 		dropOther(FABlocks.EXPLOSION_POTATO.get(), FAItems.EXPLOSION_POTATO);
-		dropOther(FABlocks.BLUE_CARROT.get(), FAItems.EXPLOSION_POTATO);// todo
+		dropOther(FABlocks.BLUES_CARROT.get(), FAItems.EXPLOSION_POTATO);// todo
 		dropOther(FABlocks.STRONG_CARROT.get(), FAItems.STRONG_CARROT);
 	}
 
