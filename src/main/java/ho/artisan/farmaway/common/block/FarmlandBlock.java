@@ -1,5 +1,6 @@
 package ho.artisan.farmaway.common.block;
 
+import ho.artisan.farmaway.common.registry.FATags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -32,11 +33,9 @@ import javax.annotation.Nullable;
 public class FarmlandBlock extends Block {
 	private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
 	public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
-	public final Type type;
 
-	public FarmlandBlock(Properties properties, Type type) {
+	public FarmlandBlock(Properties properties) {
 		super(properties);
-		this.type = type;
 	}
 
 	@Override
@@ -56,7 +55,7 @@ public class FarmlandBlock extends Block {
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return !this.defaultBlockState().canSurvive(context.getLevel(), context.getClickedPos())
-			? this.type.getOriginalBlock().defaultBlockState()
+			? this.getType().getOriginalBlock().defaultBlockState()
 			: super.getStateForPlacement(context);
 	}
 
@@ -79,7 +78,7 @@ public class FarmlandBlock extends Block {
 
 	@Override
 	protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-		if (this.type == Type.SHADOW) {
+		if (this.getType() == Type.SHADOW) {
 			return;
 		}
 		int i = state.getValue(MOISTURE);
@@ -96,14 +95,14 @@ public class FarmlandBlock extends Block {
 
 	@Override
 	public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-		if (!level.isClientSide && CommonHooks.onFarmlandTrample(level, pos, this.type.getOriginalBlock().defaultBlockState(), fallDistance, entity)) {
+		if (!level.isClientSide && CommonHooks.onFarmlandTrample(level, pos, this.getType().getOriginalBlock().defaultBlockState(), fallDistance, entity)) {
 			turnToOrigin(entity, state, level, pos);
 		}
 		super.fallOn(level, state, pos, entity, fallDistance);
 	}
 
 	public void turnToOrigin(@Nullable Entity entity, BlockState state, Level level, BlockPos pos) {
-		BlockState blockstate = pushEntitiesUp(state, type.getOriginalBlock().defaultBlockState(), level, pos);
+		BlockState blockstate = pushEntitiesUp(state, getType().getOriginalBlock().defaultBlockState(), level, pos);
 		level.setBlockAndUpdate(pos, blockstate);
 		level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(entity, blockstate));
 	}
@@ -113,14 +112,14 @@ public class FarmlandBlock extends Block {
 	}
 
 	private boolean isNearFluid(ServerLevel level, BlockPos pos) {
-		if (level.isRainingAt(pos.above()) && this.type.needsWater()) {
+		if (level.isRainingAt(pos.above()) && this.getType().needsWater()) {
 			return true;
 		}
 		for (BlockPos blockPos : BlockPos.betweenClosed(pos.offset(-4, 0, -4), pos.offset(4, 1, 4))) {
-			if (level.getFluidState(blockPos).is(FluidTags.WATER) && this.type.needsWater()) {
+			if (level.getFluidState(blockPos).is(FluidTags.WATER) && this.getType().needsWater()) {
 				return true;
 			}
-			if (level.getFluidState(blockPos).is(FluidTags.LAVA) && this.type == Type.FLAME) {
+			if (level.getFluidState(blockPos).is(FluidTags.LAVA) && this.getType() == Type.FLAME) {
 				return true;
 			}
 		}
@@ -135,6 +134,28 @@ public class FarmlandBlock extends Block {
 	@Override
 	protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
 		return false;
+	}
+
+	public Type getType() {
+		if (this.defaultBlockState().is(FATags.TERRA_FARMLANDS)) {
+			return Type.TERRA;
+		}
+		if (this.defaultBlockState().is(FATags.FLAME_FARMLANDS)) {
+			return Type.FLAME;
+		}
+		if (this.defaultBlockState().is(FATags.SHADOW_FARMLANDS)) {
+			return Type.SHADOW;
+		}
+		if (this.defaultBlockState().is(FATags.SCARLET_FARMLANDS)) {
+			return Type.SCARLET;
+		}
+		if (this.defaultBlockState().is(FATags.RAY_FARMLANDS)) {
+			return Type.RAY;
+		}
+		if (this.defaultBlockState().is(FATags.WIND_FARMLANDS)) {
+			return Type.WIND;
+		}
+		throw new RuntimeException("Find a farmland without a type");
 	}
 
 	public enum Type {

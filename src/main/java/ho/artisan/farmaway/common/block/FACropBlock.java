@@ -16,7 +16,7 @@ public class FACropBlock extends CropBlock {
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         if (level.getBlockState(pos.below()).getBlock() instanceof FarmlandBlock farmland) {
-            return switch (farmland.type) {
+            return switch (farmland.getType()) {
                 case TERRA -> state.is(FATags.TERRA_CROPS);
                 case FLAME -> state.is(FATags.FLAME_CROPS);
                 case SHADOW -> state.is(FATags.SHADOW_CROPS);

@@ -2,6 +2,7 @@ package ho.artisan.farmaway.common.datagen.loot;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlocks;
+import ho.artisan.farmaway.common.registry.FAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -25,6 +26,9 @@ public class FABlockLootSubProvider extends BlockLootSubProvider {
 		dropOther(FABlocks.GRANITE_FARMLAND.get(), Blocks.GRANITE);
 		dropOther(FABlocks.ANDESITE_FARMLAND.get(), Blocks.ANDESITE);
 		dropOther(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
+		dropOther(FABlocks.EXPLOSION_POTATO.get(), FAItems.EXPLOSION_POTATO);
+		//todo
+		dropOther(FABlocks.BLUE_CARROT.get(), FAItems.EXPLOSION_POTATO);
 	}
 
 	@Override

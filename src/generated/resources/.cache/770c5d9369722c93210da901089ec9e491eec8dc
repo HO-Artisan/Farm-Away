@@ -1,2 +1,9 @@
-// 1.21	2024-07-22T15:52:14.7438012	Tags for minecraft:block mod id farm_away
-76ea2d2dd057d816d208a009b99ea4c3235a9681 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21	2024-07-23T11:41:21.2612359	Tags for minecraft:block mod id farm_away
+c1826168e18fa3a5776d3046d94c9036e7cc55fe data/farm_away/tags/block/farmlands.json
+700b82f15080a74788f4041b7c6cf7a16f5b4827 data/farm_away/tags/block/farmlands/flame.json
+bc237eb5c22e64aa55de6752af397805b6441585 data/farm_away/tags/block/farmlands/ray.json
+60a41175580c9581f9a76fdf39ba19648b5095de data/farm_away/tags/block/farmlands/scarlet.json
+fa529999f9c4350a42a467932a0c2c7ac5c95b92 data/farm_away/tags/block/farmlands/shadow.json
+0475387aef24a934bfd1a0bc2ed8de00df4e8395 data/farm_away/tags/block/farmlands/terra.json
+6cc62ee0fcc001eedb2ef1b7207c8ec5d052c474 data/farm_away/tags/block/farmlands/wind.json
+fa3c2f8129d1c4b0ff2e6fac1c12078cf0d0468c data/minecraft/tags/block/mineable/pickaxe.json

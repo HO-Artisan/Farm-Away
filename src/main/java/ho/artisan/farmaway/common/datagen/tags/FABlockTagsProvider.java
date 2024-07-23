@@ -19,12 +19,19 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.Provider lookupProvider) {
 		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-				FABlocks.STONE_FARMLAND.get(),
-				FABlocks.NETHERRACK_FARMLAND.get(),
-				FABlocks.END_STONE_FARMLAND.get(),
-				FABlocks.GRANITE_FARMLAND.get(),
-				FABlocks.ANDESITE_FARMLAND.get(),
-				FABlocks.DIORITE_FARMLAND.get()
+			FABlocks.STONE_FARMLAND.get(),
+			FABlocks.NETHERRACK_FARMLAND.get(),
+			FABlocks.END_STONE_FARMLAND.get(),
+			FABlocks.GRANITE_FARMLAND.get(),
+			FABlocks.ANDESITE_FARMLAND.get(),
+			FABlocks.DIORITE_FARMLAND.get()
 		);
+		tag(FATags.TERRA_FARMLANDS).add(FABlocks.STONE_FARMLAND.get());
+		tag(FATags.FLAME_FARMLANDS).add(FABlocks.NETHERRACK_FARMLAND.get());
+		tag(FATags.SHADOW_FARMLANDS).add(FABlocks.END_STONE_FARMLAND.get());
+		tag(FATags.SCARLET_FARMLANDS).add(FABlocks.GRANITE_FARMLAND.get());
+		tag(FATags.RAY_FARMLANDS).add(FABlocks.ANDESITE_FARMLAND.get());
+		tag(FATags.WIND_FARMLANDS).add(FABlocks.DIORITE_FARMLAND.get());
+		tag(FATags.FARMLANDS).addTags(FATags.TERRA_FARMLANDS, FATags.FLAME_FARMLANDS, FATags.SHADOW_FARMLANDS, FATags.SCARLET_FARMLANDS, FATags.RAY_FARMLANDS, FATags.WIND_FARMLANDS);
 	}
 }
