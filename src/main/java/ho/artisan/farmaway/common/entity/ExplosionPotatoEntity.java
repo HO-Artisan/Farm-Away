@@ -2,7 +2,6 @@ package ho.artisan.farmaway.common.entity;
 
 import ho.artisan.farmaway.common.registry.FAEntities;
 import ho.artisan.farmaway.common.registry.FAItems;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -14,9 +13,11 @@ public class ExplosionPotatoEntity extends ThrowableItemProjectile {
 	public ExplosionPotatoEntity(EntityType<? extends ExplosionPotatoEntity> entityType, Level level) {
 		super(entityType, level);
 	}
+
 	public ExplosionPotatoEntity(Level level, LivingEntity shooter) {
 		super(FAEntities.EXPLOSION_POTATO.get(), shooter, level);
 	}
+
 	public ExplosionPotatoEntity(Level level, double x, double y, double z) {
 		super(FAEntities.EXPLOSION_POTATO.get(), x, y, z, level);
 	}

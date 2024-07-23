@@ -12,6 +12,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class FAEntities {
 	private static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, FarmAway.MOD_ID);
 	public static final DeferredHolder<EntityType<?>, EntityType<ExplosionPotatoEntity>> EXPLOSION_POTATO = ENTITIES.register("explosion_potato", () -> EntityType.Builder.<ExplosionPotatoEntity>of(ExplosionPotatoEntity::new, MobCategory.MISC).build(FarmAway.MOD_ID + "explosion_potato"));
+
 	public static void register(IEventBus bus) {
 		ENTITIES.register(bus);
 	}

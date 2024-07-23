@@ -1,9 +1,13 @@
-package ho.artisan.farmaway.common.datagen.lang;
+package ho.artisan.farmaway.datagen.lang;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlocks;
+import ho.artisan.farmaway.common.registry.FAEntities;
 import ho.artisan.farmaway.common.registry.FAItems;
+import ho.artisan.farmaway.common.registry.FAMobEffects;
+import net.minecraft.Util;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class FAChineseLanguageProvider extends LanguageProvider {
@@ -21,5 +25,13 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FABlocks.GRANITE_FARMLAND.get(), "花岗岩耕地");
 		add(FABlocks.ANDESITE_FARMLAND.get(), "安山岩耕地");
 		add(FABlocks.DIORITE_FARMLAND.get(), "闪长岩耕地");
+
+		add(FABlocks.EXPLOSION_POTATO.get(), "爆炎土豆");
+		add(FABlocks.BLUES_CARROT.get(), "蓝胡萝卜");
+		add(FABlocks.STRONG_CARROT.get(), "强力胡萝卜");
+
+		add(FAEntities.EXPLOSION_POTATO.get(), "爆炎土豆");
+
+		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.BLUES.getRegisteredName())), "蓝");
 	}
 }

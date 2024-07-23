@@ -1,8 +1,10 @@
 package ho.artisan.farmaway.common.registry;
 
 import ho.artisan.farmaway.FarmAway;
-import ho.artisan.farmaway.common.block.FACropBlock;
+import ho.artisan.farmaway.common.block.BluesCarrotBlock;
+import ho.artisan.farmaway.common.block.ExplosionPotatoBlock;
 import ho.artisan.farmaway.common.block.FarmlandBlock;
+import ho.artisan.farmaway.common.block.StrongCarrotBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -29,16 +31,12 @@ public class FABlocks {
 	public static final DeferredBlock<FarmlandBlock> DIORITE_FARMLAND = registerFarmland("diorite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.DIORITE).randomTicks());
 
 	// Crops
-	public static final DeferredBlock<FACropBlock> EXPLOSION_POTATO = registerCrop("explosion_potato", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 7);
-	public static final DeferredBlock<FACropBlock> BLUES_CARROT = registerCrop("blue_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks(), 15);
-	public static final DeferredBlock<FACropBlock> STRONG_CARROT = registerCrop("strong_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks(), 3);
+	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATO = BLOCKS.register("explosion_potato", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
+	public static final DeferredBlock<BluesCarrotBlock> BLUES_CARROT = BLOCKS.register("blues_carrot", () -> new BluesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROT = BLOCKS.register("strong_carrot", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 
 	private static DeferredBlock<FarmlandBlock> registerFarmland(String name, BlockBehaviour.Properties properties) {
 		return BLOCKS.register(name, () -> new FarmlandBlock(properties));
-	}
-
-	private static DeferredBlock<FACropBlock> registerCrop(String name, BlockBehaviour.Properties properties, int max_age) {
-		return BLOCKS.register(name, () -> new FACropBlock(properties, max_age));
 	}
 
 	public static void register(IEventBus bus) {

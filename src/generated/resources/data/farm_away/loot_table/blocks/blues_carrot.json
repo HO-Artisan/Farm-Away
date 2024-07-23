@@ -16,18 +16,18 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "farm_away:strong_carrot",
+                  "block": "farm_away:blues_carrot",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "3"
+                    "age": "15"
                   }
                 }
               ],
-              "name": "farm_away:strong_carrot"
+              "name": "farm_away:blues_carrot"
             },
             {
               "type": "minecraft:item",
-              "name": "farm_away:strong_carrot"
+              "name": "farm_away:blues_carrot"
             }
           ]
         }
@@ -38,10 +38,10 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "farm_away:strong_carrot",
+          "block": "farm_away:blues_carrot",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "3"
+            "age": "15"
           }
         }
       ],
@@ -59,11 +59,11 @@
               }
             }
           ],
-          "name": "farm_away:strong_carrot"
+          "name": "farm_away:blues_carrot"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "farm_away:blocks/strong_carrot"
+  "random_sequence": "farm_away:blocks/blues_carrot"
 }

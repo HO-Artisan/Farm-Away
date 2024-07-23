@@ -20,7 +20,7 @@ public class FarmAway {
 		FAItems.register(bus);
 		FATabs.register(bus);
 		FAEntities.register(bus);
-		FAEffects.register(bus);
+		FAMobEffects.register(bus);
 	}
 
 	public static ResourceLocation getResourceLocation(String path) {

@@ -1,4 +1,4 @@
-package ho.artisan.farmaway.client;
+package ho.artisan.farmaway.client.event;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FAEntities;
@@ -13,7 +13,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 @EventBusSubscriber(modid = FarmAway.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class FAClientEvents {
 	@SubscribeEvent
-	public static void onRenderers(EntityRenderersEvent.RegisterRenderers event) {
+	private static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(FAEntities.EXPLOSION_POTATO.get(), ThrownItemRenderer::new);
 	}
 }

@@ -1,4 +1,4 @@
-package ho.artisan.farmaway.common.datagen.model;
+package ho.artisan.farmaway.datagen.model;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlocks;
@@ -7,7 +7,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -32,6 +34,9 @@ public class FABlockStateProvider extends BlockStateProvider {
 		farmland(FABlocks.GRANITE_FARMLAND.get(), Blocks.GRANITE);
 		farmland(FABlocks.ANDESITE_FARMLAND.get(), Blocks.ANDESITE);
 		farmland(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
+		crop(FABlocks.EXPLOSION_POTATO.get(), 3, BlockStateProperties.AGE_7);
+		crop(FABlocks.BLUES_CARROT.get(), 3, BlockStateProperties.AGE_15);
+		crop(FABlocks.STRONG_CARROT.get(), 3, BlockStateProperties.AGE_3);
 	}
 
 	private void farmland(Block farmland, Block dirt) {
@@ -44,6 +49,16 @@ public class FABlockStateProvider extends BlockStateProvider {
 		getVariantBuilder(farmland).forAllStates(state -> ConfiguredModel.builder().modelFile(state.getValue(BlockStateProperties.MOISTURE) < 7 ? normal : moist).build());
 	}
 
+	private void crop(CropBlock crop, int maxStage, IntegerProperty ageProperty) {
+		int maxAge = crop.getMaxAge();
+		getVariantBuilder(crop).forAllStates(state -> {
+			int stage = Math.min(state.getValue(ageProperty) / (maxAge / maxStage), maxStage - 1);
+			if (state.getValue(ageProperty) == maxAge) {
+				stage = maxStage;
+			}
+			return ConfiguredModel.builder().modelFile(models().crop(name(crop) + "_stage" + stage, blockTexture(crop).withSuffix("_stage" + stage)).renderType(CUTOUT)).build();
+		});
+	}
 
 	private ResourceLocation key(Block block) {
 		return BuiltInRegistries.BLOCK.getKey(block);

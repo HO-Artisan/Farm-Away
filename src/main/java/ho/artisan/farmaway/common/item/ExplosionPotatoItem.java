@@ -11,7 +11,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
-import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
@@ -25,7 +24,7 @@ public class ExplosionPotatoItem extends BlockItem implements ProjectileItem {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
 		ItemStack itemstack = player.getItemInHand(player.getUsedItemHand());
-		if (player.isShiftKeyDown() && !level.isClientSide) {
+		if (!level.isClientSide && player.isCrouching()) {
 			level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRECHARGE_USE, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 			ExplosionPotatoEntity potato = new ExplosionPotatoEntity(level, player);
 			potato.setItem(itemstack);

@@ -1,4 +1,4 @@
-package ho.artisan.farmaway.common.datagen.loot;
+package ho.artisan.farmaway.datagen.loot;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

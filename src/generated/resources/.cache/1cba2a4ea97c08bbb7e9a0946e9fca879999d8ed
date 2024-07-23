@@ -1,3 +1,4 @@
-// 1.21	2024-07-23T11:52:30.383586	Tags for minecraft:item mod id farm_away
+// 1.21	2024-07-24T00:13:55.4829086	Tags for minecraft:item mod id farm_away
 5e3f64321ddade1ae8829fe943feba3b9f76ec11 data/farm_away/tags/item/seeds/flame.json
+fdd34af9f633905bed8dc3c5b61a7a971d6a65db data/farm_away/tags/item/seeds/shadow.json
 f2c6401609ba18572083a8acd9c36df9c6f2d8b3 data/minecraft/tags/item/hoes.json

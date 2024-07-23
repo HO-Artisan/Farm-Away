@@ -1,4 +1,4 @@
-package ho.artisan.farmaway.common.datagen.tags;
+package ho.artisan.farmaway.datagen.tags;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlockTags;

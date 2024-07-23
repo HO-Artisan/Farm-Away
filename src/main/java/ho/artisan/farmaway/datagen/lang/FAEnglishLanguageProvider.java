@@ -1,9 +1,13 @@
-package ho.artisan.farmaway.common.datagen.lang;
+package ho.artisan.farmaway.datagen.lang;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlocks;
+import ho.artisan.farmaway.common.registry.FAEntities;
 import ho.artisan.farmaway.common.registry.FAItems;
+import ho.artisan.farmaway.common.registry.FAMobEffects;
+import net.minecraft.Util;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
 public class FAEnglishLanguageProvider extends LanguageProvider {
@@ -21,5 +25,13 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FABlocks.GRANITE_FARMLAND.get(), "Granite Farmland");
 		add(FABlocks.ANDESITE_FARMLAND.get(), "Andesite Farmland");
 		add(FABlocks.DIORITE_FARMLAND.get(), "Diorite Farmland");
+
+		add(FABlocks.EXPLOSION_POTATO.get(), "Explosion Potato");
+		add(FABlocks.BLUES_CARROT.get(), "Blues Carrot");
+		add(FABlocks.STRONG_CARROT.get(), "Strong Carrot");
+
+		add(FAEntities.EXPLOSION_POTATO.get(), "Explosion Potato");
+
+		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.BLUES.getRegisteredName())), "Blues");
 	}
 }

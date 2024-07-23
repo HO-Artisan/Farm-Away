@@ -8,10 +8,11 @@ import net.minecraft.world.effect.MobEffect;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class FAEffects {
-	private static DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, FarmAway.MOD_ID);
-	public static Holder<MobEffect> BLUES = EFFECTS.register("blues", BluesEffect::new);
+public class FAMobEffects {
+	private static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT, FarmAway.MOD_ID);
+	public static Holder<MobEffect> BLUES = MOB_EFFECTS.register("blues", BluesEffect::new);
+
 	public static void register(IEventBus bus) {
-		EFFECTS.register(bus);
+		MOB_EFFECTS.register(bus);
 	}
 }

@@ -4,7 +4,6 @@ import ho.artisan.farmaway.FarmAway;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
 public class FAItemTags {
 	public static TagKey<Item> TERRA_SEEDS = create("seeds/terra");

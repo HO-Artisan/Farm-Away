@@ -1,4 +1,4 @@
-package ho.artisan.farmaway.common.datagen.model;
+package ho.artisan.farmaway.datagen.model;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FAItems;
