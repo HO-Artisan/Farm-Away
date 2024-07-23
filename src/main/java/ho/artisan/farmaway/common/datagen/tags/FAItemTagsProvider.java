@@ -1,6 +1,7 @@
 package ho.artisan.farmaway.common.datagen.tags;
 
 import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FAItemTags;
 import ho.artisan.farmaway.common.registry.FAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -20,6 +21,9 @@ public class FAItemTagsProvider extends ItemTagsProvider {
 	protected void addTags(HolderLookup.Provider lookupProvider) {
 		tag(ItemTags.HOES).add(
 			FAItems.ENHANCED_HOE.get()
+		);
+		tag(FAItemTags.FLAME_SEEDS).add(
+			FAItems.EXPLOSION_POTATO.get()
 		);
 	}
 }

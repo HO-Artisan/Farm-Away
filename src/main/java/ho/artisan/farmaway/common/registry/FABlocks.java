@@ -27,8 +27,9 @@ public class FABlocks {
 	public static final DeferredBlock<FarmlandBlock> GRANITE_FARMLAND = registerFarmland("granite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE).randomTicks(), FarmlandBlock.Type.SCARLET);
 	public static final DeferredBlock<FarmlandBlock> ANDESITE_FARMLAND = registerFarmland("andesite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).randomTicks(), FarmlandBlock.Type.RAY);
 	public static final DeferredBlock<FarmlandBlock> DIORITE_FARMLAND = registerFarmland("diorite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.DIORITE).randomTicks(), FarmlandBlock.Type.WIND);
-	public static final DeferredBlock<FACropBlock> EXPLOSION_POTATO = registerCrop("explosion_potato", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 3);
-	public static final DeferredBlock<FACropBlock> BLUE_CARROT = registerCrop("blue_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 3);
+	public static final DeferredBlock<FACropBlock> EXPLOSION_POTATO = registerCrop("explosion_potato", BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks(), 7);
+	public static final DeferredBlock<FACropBlock> BLUE_CARROT = registerCrop("blue_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks(), 15);
+	public static final DeferredBlock<FACropBlock> STRONG_CARROT = registerCrop("strong_carrot", BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks(), 3);
 
 	private static DeferredBlock<FarmlandBlock> registerFarmland(String name, BlockBehaviour.Properties properties, FarmlandBlock.Type type) {
 		return BLOCKS.register(name, () -> new FarmlandBlock(properties, type));

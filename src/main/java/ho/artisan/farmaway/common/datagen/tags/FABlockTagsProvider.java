@@ -1,8 +1,8 @@
 package ho.artisan.farmaway.common.datagen.tags;
 
 import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FABlockTags;
 import ho.artisan.farmaway.common.registry.FABlocks;
-import ho.artisan.farmaway.common.registry.FATags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -25,6 +25,13 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 				FABlocks.GRANITE_FARMLAND.get(),
 				FABlocks.ANDESITE_FARMLAND.get(),
 				FABlocks.DIORITE_FARMLAND.get()
+		);
+		tag(FABlockTags.FLAME_CROPS).add(
+			FABlocks.EXPLOSION_POTATO.get(),
+			FABlocks.STRONG_CARROT.get()
+		);
+		tag(FABlockTags.SHADOW_CROPS).add(
+			FABlocks.BLUE_CARROT.get()
 		);
 	}
 }
