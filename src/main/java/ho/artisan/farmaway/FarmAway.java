@@ -1,6 +1,7 @@
 package ho.artisan.farmaway;
 
 import ho.artisan.farmaway.common.registry.FABlocks;
+import ho.artisan.farmaway.common.registry.FAEntities;
 import ho.artisan.farmaway.common.registry.FAItems;
 import ho.artisan.farmaway.common.registry.FATabs;
 import net.minecraft.Util;
@@ -21,6 +22,7 @@ public class FarmAway {
 		FABlocks.register(bus);
 		FAItems.register(bus);
 		FATabs.register(bus);
+		FAEntities.register(bus);
 	}
 
 	public static ResourceLocation getResourceLocation(String path) {

@@ -4,11 +4,13 @@ import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FAEntities;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
-@EventBusSubscriber(modid = FarmAway.MOD_ID, value = Dist.CLIENT)
+@OnlyIn(Dist.CLIENT)
+@EventBusSubscriber(modid = FarmAway.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class FAClientEvents {
 	@SubscribeEvent
 	public static void onRenderers(EntityRenderersEvent.RegisterRenderers event) {
