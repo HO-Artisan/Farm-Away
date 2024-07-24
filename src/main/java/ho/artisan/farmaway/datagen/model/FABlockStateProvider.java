@@ -35,6 +35,7 @@ public class FABlockStateProvider extends BlockStateProvider {
 		farmland(FABlocks.ANDESITE_FARMLAND.get(), Blocks.ANDESITE);
 		farmland(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
 		crop(FABlocks.EXPLOSION_POTATOES.get(), 3, BlockStateProperties.AGE_7);
+		crop(FABlocks.PHANTOM_BEETROOTS.get(), 3, BlockStateProperties.AGE_7);
 		crop(FABlocks.BLUES_CARROTS.get(), 3, BlockStateProperties.AGE_15);
 		crop(FABlocks.STRONG_CARROTS.get(), 3, BlockStateProperties.AGE_3);
 		crop(FABlocks.PHANTOM_POTATOES.get(), 2, IntegerProperty.create("age", 0, 6));

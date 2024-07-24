@@ -31,6 +31,7 @@ public class FAItemModelProvider extends ItemModelProvider {
 		basicItem(FAItems.MELON_ROCKET.get());
 		basicItem(FAItems.MELON_ROCKET_SEED.get());
 		basicItem(FAItems.PHANTOM_POTATO.get());
+		basicItem(FAItems.PHANTOM_BEETROOT.get());
 		handheld(FAItems.STRONG_CARROT.get());
 	}
 

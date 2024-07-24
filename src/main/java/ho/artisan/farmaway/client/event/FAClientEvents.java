@@ -16,6 +16,7 @@ public class FAClientEvents {
 	@SubscribeEvent
 	private static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(FAEntities.EXPLOSION_POTATO.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(FAEntities.PHANTOM_BEETROOT.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(FAEntities.MELON_ROCKET.get(), MelonRocketRenderer::new);
 	}
 }
