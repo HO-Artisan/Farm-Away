@@ -26,19 +26,32 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FABlocks.GRANITE_FARMLAND.get(), "Granite Farmland");
 		add(FABlocks.ANDESITE_FARMLAND.get(), "Andesite Farmland");
 		add(FABlocks.DIORITE_FARMLAND.get(), "Diorite Farmland");
+		add(FABlocks.PHANTOM_DIRT.get(), "Phantom Dirt");
 
 		add(FABlocks.EXPLOSION_POTATOES.get(), "Explosion Potatoes");
 		add(FABlocks.BLUES_CARROTS.get(), "Blues Carrots");
 		add(FABlocks.STRONG_CARROTS.get(), "Strong Carrots");
+		add(FABlocks.PHANTOM_POTATOES.get(), "Phantom Potatoes");
+		add(FABlocks.PHANTOM_BEETROOTS.get(), "Phantom Beetroots");
+		add(FABlocks.MELON_ROCKET.get(), "Melon Rocket");
+		add(FABlocks.SOFT_POTATOES.get(), "Soft Potatoes");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "Explosion Potato");
 		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "When Crouching: Can be thrown");
 		add(FAItems.BLUES_CARROT.get(), "Blues Carrot");
 		add(FAItems.BLUES_CARROT.get().getDescriptionId() + ".tooltip", "When Eaten: Damage taken may be canceled or doubled");
 		add(FAItems.STRONG_CARROT.get(), "Strong Carrot");
+		add(FAItems.PHANTOM_POTATO.get(), "Phantom Potato");
+		add(FAItems.PHANTOM_BEETROOT.get(), "Phantom Beetroot");
+		add(FAItems.MELON_ROCKET.get(), "Melon Rocket");
+		add(FAItems.MELON_ROCKET_SEED.get(), "Melon Rocket Seed");
+		add(FAItems.SOFT_POTATO.get(), "Soft Potato");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "Explosion Potato");
+		add(FAEntities.PHANTOM_BEETROOT.get(), "Phantom Beetroot");
+		add(FAEntities.MELON_ROCKET.get(), "Melon Rocket");
 
 		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.BLUES.getRegisteredName())), "Blues");
+		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.PHANTOM.getRegisteredName())), "Phantom");
 	}
 }

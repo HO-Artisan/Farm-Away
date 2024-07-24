@@ -32,7 +32,9 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 			FABlocks.STRONG_CARROTS.get()
 		);
 		tag(FABlockTags.SHADOW_CROPS).add(
-			FABlocks.BLUES_CARROTS.get()
+			FABlocks.BLUES_CARROTS.get(),
+			FABlocks.PHANTOM_POTATOES.get(),
+			FABlocks.PHANTOM_BEETROOTS.get()
 		);
 		tag(FABlockTags.WIND_CROPS).add(
 			FABlocks.MELON_ROCKET.get()

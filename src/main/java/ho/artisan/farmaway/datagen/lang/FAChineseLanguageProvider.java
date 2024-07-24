@@ -26,19 +26,32 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FABlocks.GRANITE_FARMLAND.get(), "花岗岩耕地");
 		add(FABlocks.ANDESITE_FARMLAND.get(), "安山岩耕地");
 		add(FABlocks.DIORITE_FARMLAND.get(), "闪长岩耕地");
+		add(FABlocks.PHANTOM_DIRT.get(), "幻影泥土");
 
 		add(FABlocks.EXPLOSION_POTATOES.get(), "爆炎土豆");
-		add(FABlocks.BLUES_CARROTS.get(), "蓝胡萝卜");
+		add(FABlocks.BLUES_CARROTS.get(), "忧郁胡萝卜");
 		add(FABlocks.STRONG_CARROTS.get(), "强力胡萝卜");
+		add(FABlocks.PHANTOM_POTATOES.get(), "幻影土豆");
+		add(FABlocks.PHANTOM_BEETROOTS.get(), "幻影甜菜根");
+		add(FABlocks.MELON_ROCKET.get(), "西瓜火箭");
+		add(FABlocks.SOFT_POTATOES.get(), "柔软土豆");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "爆炎土豆");
 		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "潜行时：可投掷");
-		add(FAItems.BLUES_CARROT.get(), "蓝胡萝卜");
+		add(FAItems.BLUES_CARROT.get(), "忧郁胡萝卜");
 		add(FAItems.BLUES_CARROT.get().getDescriptionId() + ".tooltip", "食用后：受到伤害可能取消或翻倍");
 		add(FAItems.STRONG_CARROT.get(), "强力胡萝卜");
+		add(FAItems.PHANTOM_POTATO.get(), "幻影土豆");
+		add(FAItems.PHANTOM_BEETROOT.get(), "幻影甜菜根");
+		add(FAItems.MELON_ROCKET.get(), "西瓜火箭");
+		add(FAItems.MELON_ROCKET_SEED.get(), "西瓜火箭种子");
+		add(FAItems.SOFT_POTATO.get(), "柔软土豆");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "爆炎土豆");
+		add(FAEntities.PHANTOM_BEETROOT.get(), "幻影甜菜根");
+		add(FAEntities.MELON_ROCKET.get(), "西瓜火箭");
 
-		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.BLUES.getRegisteredName())), "蓝");
+		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.BLUES.getRegisteredName())), "忧郁");
+		add(Util.makeDescriptionId("effect", ResourceLocation.parse(FAMobEffects.PHANTOM.getRegisteredName())), "幻象");
 	}
 }
