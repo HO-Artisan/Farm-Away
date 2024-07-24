@@ -31,9 +31,9 @@ public class FABlockLootSubProvider extends BlockLootSubProvider {
 		dropOther(FABlocks.GRANITE_FARMLAND.get(), Blocks.GRANITE);
 		dropOther(FABlocks.ANDESITE_FARMLAND.get(), Blocks.ANDESITE);
 		dropOther(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
-		add(FABlocks.EXPLOSION_POTATO.get(), this.createCropDrops(FABlocks.EXPLOSION_POTATO.get(), FAItems.EXPLOSION_POTATO.get(), FAItems.EXPLOSION_POTATO.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(FABlocks.EXPLOSION_POTATO.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ExplosionPotatoBlock.AGE, 7))));
-		add(FABlocks.BLUES_CARROT.get(), this.createCropDrops(FABlocks.BLUES_CARROT.get(), FAItems.BLUES_CARROT.get(), FAItems.BLUES_CARROT.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(FABlocks.BLUES_CARROT.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BluesCarrotBlock.AGE, 15))));
-		add(FABlocks.STRONG_CARROT.get(), this.createCropDrops(FABlocks.STRONG_CARROT.get(), FAItems.STRONG_CARROT.get(), FAItems.STRONG_CARROT.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(FABlocks.STRONG_CARROT.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrongCarrotBlock.AGE, 3))));
+		add(FABlocks.EXPLOSION_POTATOES.get(), this.createCropDrops(FABlocks.EXPLOSION_POTATOES.get(), FAItems.EXPLOSION_POTATO.get(), FAItems.EXPLOSION_POTATO.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(FABlocks.EXPLOSION_POTATOES.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ExplosionPotatoBlock.AGE, 7))));
+		add(FABlocks.BLUES_CARROTS.get(), this.createCropDrops(FABlocks.BLUES_CARROTS.get(), FAItems.BLUES_CARROT.get(), FAItems.BLUES_CARROT.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(FABlocks.BLUES_CARROTS.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BluesCarrotBlock.AGE, 15))));
+		add(FABlocks.STRONG_CARROTS.get(), this.createCropDrops(FABlocks.STRONG_CARROTS.get(), FAItems.STRONG_CARROT.get(), FAItems.STRONG_CARROT.get(), LootItemBlockStatePropertyCondition.hasBlockStateProperties(FABlocks.STRONG_CARROTS.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrongCarrotBlock.AGE, 3))));
 	}
 
 	@Override

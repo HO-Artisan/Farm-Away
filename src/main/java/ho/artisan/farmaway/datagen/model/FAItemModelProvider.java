@@ -18,7 +18,7 @@ public class FAItemModelProvider extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		handheld(FAItems.ENHANCED_HOE.get());
+		inventory(FAItems.ENHANCED_HOE.get());
 		block(FAItems.STONE_FARMLAND.get());
 		block(FAItems.NETHERRACK_FARMLAND.get());
 		block(FAItems.END_STONE_FARMLAND.get());
@@ -42,6 +42,12 @@ public class FAItemModelProvider extends ItemModelProvider {
 		getBuilder(item.toString())
 			.parent(new ModelFile.UncheckedModelFile("item/handheld"))
 			.texture("layer0", texture);
+	}
+
+	private void inventory(Item item) {
+		getBuilder(item.toString() + "_inventory")
+			.parent(new ModelFile.UncheckedModelFile("item/generated"))
+			.texture("layer0", itemTexture(item) + "_inventory");
 	}
 
 	public ResourceLocation itemTexture(Item item) {

@@ -26,9 +26,13 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FABlocks.ANDESITE_FARMLAND.get(), "安山岩耕地");
 		add(FABlocks.DIORITE_FARMLAND.get(), "闪长岩耕地");
 
-		add(FABlocks.EXPLOSION_POTATO.get(), "爆炎土豆");
-		add(FABlocks.BLUES_CARROT.get(), "蓝胡萝卜");
-		add(FABlocks.STRONG_CARROT.get(), "强力胡萝卜");
+		add(FABlocks.EXPLOSION_POTATOES.get(), "爆炎土豆");
+		add(FABlocks.BLUES_CARROTS.get(), "蓝胡萝卜");
+		add(FABlocks.STRONG_CARROTS.get(), "强力胡萝卜");
+
+		add(FAItems.EXPLOSION_POTATO.get(), "爆炎土豆");
+		add(FAItems.BLUES_CARROT.get(), "蓝胡萝卜");
+		add(FAItems.STRONG_CARROT.get(), "强力胡萝卜");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "爆炎土豆");
 

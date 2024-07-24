@@ -26,9 +26,13 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FABlocks.ANDESITE_FARMLAND.get(), "Andesite Farmland");
 		add(FABlocks.DIORITE_FARMLAND.get(), "Diorite Farmland");
 
-		add(FABlocks.EXPLOSION_POTATO.get(), "Explosion Potato");
-		add(FABlocks.BLUES_CARROT.get(), "Blues Carrot");
-		add(FABlocks.STRONG_CARROT.get(), "Strong Carrot");
+		add(FABlocks.EXPLOSION_POTATOES.get(), "Explosion Potatoes");
+		add(FABlocks.BLUES_CARROTS.get(), "Blues Carrots");
+		add(FABlocks.STRONG_CARROTS.get(), "Strong Carrots");
+
+		add(FAItems.EXPLOSION_POTATO.get(), "Explosion Potato");
+		add(FAItems.BLUES_CARROT.get(), "Blues Carrot");
+		add(FAItems.STRONG_CARROT.get(), "Strong Carrot");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "Explosion Potato");
 

@@ -16,18 +16,18 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "farm_away:explosion_potato",
+                  "block": "farm_away:strong_carrots",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "age": "7"
+                    "age": "3"
                   }
                 }
               ],
-              "name": "farm_away:explosion_potato"
+              "name": "farm_away:strong_carrot"
             },
             {
               "type": "minecraft:item",
-              "name": "farm_away:explosion_potato"
+              "name": "farm_away:strong_carrot"
             }
           ]
         }
@@ -38,10 +38,10 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "farm_away:explosion_potato",
+          "block": "farm_away:strong_carrots",
           "condition": "minecraft:block_state_property",
           "properties": {
-            "age": "7"
+            "age": "3"
           }
         }
       ],
@@ -59,11 +59,11 @@
               }
             }
           ],
-          "name": "farm_away:explosion_potato"
+          "name": "farm_away:strong_carrot"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "farm_away:blocks/explosion_potato"
+  "random_sequence": "farm_away:blocks/strong_carrots"
 }

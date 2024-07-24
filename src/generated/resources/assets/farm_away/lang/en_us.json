@@ -1,15 +1,18 @@
 {
   "block.farm_away.andesite_farmland": "Andesite Farmland",
-  "block.farm_away.blues_carrot": "Blues Carrot",
+  "block.farm_away.blues_carrots": "Blues Carrots",
   "block.farm_away.diorite_farmland": "Diorite Farmland",
   "block.farm_away.end_stone_farmland": "End Stone Farmland",
-  "block.farm_away.explosion_potato": "Explosion Potato",
+  "block.farm_away.explosion_potatoes": "Explosion Potatoes",
   "block.farm_away.granite_farmland": "Granite Farmland",
   "block.farm_away.netherrack_farmland": "Netherrack Farmland",
   "block.farm_away.stone_farmland": "Stone Farmland",
-  "block.farm_away.strong_carrot": "Strong Carrot",
+  "block.farm_away.strong_carrots": "Strong Carrots",
   "effect.farm_away.blues": "Blues",
   "entity.farm_away.explosion_potato": "Explosion Potato",
+  "item.farm_away.blues_carrot": "Blues Carrot",
   "item.farm_away.enhanced_hoe": "Enhanced Hoe",
+  "item.farm_away.explosion_potato": "Explosion Potato",
+  "item.farm_away.strong_carrot": "Strong Carrot",
   "itemGroup.farm_away.main": "Farm Away"
 }

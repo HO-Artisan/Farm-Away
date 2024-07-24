@@ -27,11 +27,11 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 			FABlocks.DIORITE_FARMLAND.get()
 		);
 		tag(FABlockTags.FLAME_CROPS).add(
-			FABlocks.EXPLOSION_POTATO.get(),
-			FABlocks.STRONG_CARROT.get()
+			FABlocks.EXPLOSION_POTATOES.get(),
+			FABlocks.STRONG_CARROTS.get()
 		);
 		tag(FABlockTags.SHADOW_CROPS).add(
-			FABlocks.BLUES_CARROT.get()
+			FABlocks.BLUES_CARROTS.get()
 		);
 		tag(FABlockTags.TERRA_FARMLANDS).add(FABlocks.STONE_FARMLAND.get());
 		tag(FABlockTags.FLAME_FARMLANDS).add(FABlocks.NETHERRACK_FARMLAND.get());

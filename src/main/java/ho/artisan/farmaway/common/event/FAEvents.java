@@ -2,7 +2,6 @@ package ho.artisan.farmaway.common.event;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FAMobEffects;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -15,22 +14,11 @@ public class FAEvents {
 		if (event.getEntity().hasEffect(FAMobEffects.BLUES)) {
 			MobEffectInstance instance = event.getEntity().getEffect(FAMobEffects.BLUES);
 			if (instance != null) {
-				int amplifier = instance.getAmplifier();
-				if (event.getEntity().hasEffect(FAMobEffects.BLUES)) {
-					int i = RandomSource.create().nextInt(0, 100);
-					if (amplifier <= 6) {
-						if (i > 50 - amplifier * 5) {
-							event.setAmount(0);
-						} else {
-							event.setAmount(event.getOriginalAmount() * 2);
-						}
-					} else {
-						if (i > 50 - 6 * 5) {
-							event.setAmount(0);
-						} else {
-							event.setAmount(event.getOriginalAmount() * 2);
-						}
-					}
+				int amplifier = Math.min(instance.getAmplifier(), 6);
+				if (event.getEntity().getRandom().nextInt(100) > 50 - amplifier * 5) {
+					event.setAmount(0);
+				} else {
+					event.setAmount(event.getOriginalAmount() * 2);
 				}
 			}
 		}

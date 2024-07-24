@@ -2,6 +2,6 @@
   "parent": "minecraft:block/crop",
   "render_type": "minecraft:cutout",
   "textures": {
-    "crop": "farm_away:block/explosion_potato_stage2"
+    "crop": "farm_away:block/blues_carrots_stage3"
   }
 }

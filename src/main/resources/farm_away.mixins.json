@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ho.artisan.farmaway.common.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "farm_away.refmap.json",
+  "mixins": [
+    "CropBlockMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

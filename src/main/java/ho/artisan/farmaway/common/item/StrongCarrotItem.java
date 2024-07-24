@@ -5,7 +5,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.context.UseOnContext;
@@ -16,7 +16,7 @@ import net.neoforged.neoforge.common.ItemAbility;
 
 import java.util.List;
 
-public class StrongCarrotItem extends BlockItem {
+public class StrongCarrotItem extends ItemNameBlockItem {
 	public StrongCarrotItem(Block block, Properties properties) {
 		super(block, properties.component(DataComponents.TOOL, createToolProperties()));
 	}

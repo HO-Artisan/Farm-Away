@@ -1,15 +1,18 @@
 {
   "block.farm_away.andesite_farmland": "安山岩耕地",
-  "block.farm_away.blues_carrot": "蓝胡萝卜",
+  "block.farm_away.blues_carrots": "蓝胡萝卜",
   "block.farm_away.diorite_farmland": "闪长岩耕地",
   "block.farm_away.end_stone_farmland": "末地石耕地",
-  "block.farm_away.explosion_potato": "爆炎土豆",
+  "block.farm_away.explosion_potatoes": "爆炎土豆",
   "block.farm_away.granite_farmland": "花岗岩耕地",
   "block.farm_away.netherrack_farmland": "下界岩耕地",
   "block.farm_away.stone_farmland": "石耕地",
-  "block.farm_away.strong_carrot": "强力胡萝卜",
+  "block.farm_away.strong_carrots": "强力胡萝卜",
   "effect.farm_away.blues": "蓝",
   "entity.farm_away.explosion_potato": "爆炎土豆",
+  "item.farm_away.blues_carrot": "蓝胡萝卜",
   "item.farm_away.enhanced_hoe": "强化锄",
+  "item.farm_away.explosion_potato": "爆炎土豆",
+  "item.farm_away.strong_carrot": "强力胡萝卜",
   "itemGroup.farm_away.main": "田园巫术"
 }
