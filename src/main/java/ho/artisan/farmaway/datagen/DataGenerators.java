@@ -37,6 +37,7 @@ public class DataGenerators {
 		generator.addProvider(event.includeServer(), blockTags);
 		generator.addProvider(event.includeServer(), new FAItemTagsProvider(output, lookupProvider, blockTags.contentsGetter(), helper));
 
+		generator.addProvider(event.includeServer(), new FARecipeProvider(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new FALootProvider(output, lookupProvider));
 	}
 }

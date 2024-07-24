@@ -2,8 +2,10 @@ package ho.artisan.farmaway.common.item;
 
 import ho.artisan.farmaway.common.entity.ExplosionPotatoEntity;
 import ho.artisan.farmaway.common.registry.FABlocks;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -14,7 +16,10 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+
+import java.util.List;
 
 public class ExplosionPotatoItem extends ItemNameBlockItem implements ProjectileItem {
 	public ExplosionPotatoItem(Properties properties) {
@@ -43,5 +48,11 @@ public class ExplosionPotatoItem extends ItemNameBlockItem implements Projectile
 		ExplosionPotatoEntity potato = new ExplosionPotatoEntity(level, position.x(), position.y(), position.z());
 		potato.setItem(this.getDefaultInstance());
 		return potato;
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+		tooltipComponents.add(Component.translatable(getDescriptionId() + ".tooltip").withStyle(ChatFormatting.YELLOW));
 	}
 }

@@ -19,6 +19,7 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 	protected void addTranslations() {
 		add(FarmAway.descriptionId("itemGroup", "main"), "田园巫术");
 		add(FAItems.ENHANCED_HOE.get(), "强化锄");
+		add(FAItems.ENHANCED_HOE.get().getDescriptionId() + ".tooltip", "可开垦：");
 		add(FABlocks.STONE_FARMLAND.get(), "石耕地");
 		add(FABlocks.NETHERRACK_FARMLAND.get(), "下界岩耕地");
 		add(FABlocks.END_STONE_FARMLAND.get(), "末地石耕地");
@@ -31,7 +32,9 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FABlocks.STRONG_CARROTS.get(), "强力胡萝卜");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "爆炎土豆");
+		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "潜行时：可投掷");
 		add(FAItems.BLUES_CARROT.get(), "蓝胡萝卜");
+		add(FAItems.BLUES_CARROT.get().getDescriptionId() + ".tooltip", "食用后：受到伤害可能取消或翻倍");
 		add(FAItems.STRONG_CARROT.get(), "强力胡萝卜");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "爆炎土豆");

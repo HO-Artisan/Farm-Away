@@ -55,7 +55,7 @@ public class FAClientSetupEvents {
 							@Override
 							public BakedModel applyTransform(ItemDisplayContext cameraTransformType, PoseStack poseStack, boolean applyLeftHandTransform) {
 								if (ITEMS_WITH_SPECIAL_MODELS.get(location).containsKey(cameraTransformType)) {
-									return BAKED_MODELS.get(ITEMS_WITH_SPECIAL_MODELS.get(location).get(cameraTransformType));
+									return BAKED_MODELS.get(ITEMS_WITH_SPECIAL_MODELS.get(location).get(cameraTransformType)).applyTransform(cameraTransformType, poseStack, applyLeftHandTransform);
 								}
 								return super.applyTransform(cameraTransformType, poseStack, applyLeftHandTransform);
 							}
@@ -66,7 +66,7 @@ public class FAClientSetupEvents {
 					@Override
 					public BakedModel applyTransform(ItemDisplayContext cameraTransformType, PoseStack poseStack, boolean applyLeftHandTransform) {
 						if (ITEMS_WITH_SPECIAL_MODELS.get(location).containsKey(cameraTransformType)) {
-							return BAKED_MODELS.get(ITEMS_WITH_SPECIAL_MODELS.get(location).get(cameraTransformType));
+							return BAKED_MODELS.get(ITEMS_WITH_SPECIAL_MODELS.get(location).get(cameraTransformType)).applyTransform(cameraTransformType, poseStack, applyLeftHandTransform);
 						}
 						return super.applyTransform(cameraTransformType, poseStack, applyLeftHandTransform);
 					}

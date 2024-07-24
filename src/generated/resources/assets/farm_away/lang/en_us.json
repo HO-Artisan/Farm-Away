@@ -11,8 +11,11 @@
   "effect.farm_away.blues": "Blues",
   "entity.farm_away.explosion_potato": "Explosion Potato",
   "item.farm_away.blues_carrot": "Blues Carrot",
+  "item.farm_away.blues_carrot.tooltip": "When Eaten: Damage taken may be canceled or doubled",
   "item.farm_away.enhanced_hoe": "Enhanced Hoe",
+  "item.farm_away.enhanced_hoe.tooltip": "Able to Till:",
   "item.farm_away.explosion_potato": "Explosion Potato",
+  "item.farm_away.explosion_potato.tooltip": "When Crouching: Can be thrown",
   "item.farm_away.strong_carrot": "Strong Carrot",
   "itemGroup.farm_away.main": "Farm Away"
 }

@@ -19,6 +19,7 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 	protected void addTranslations() {
 		add(FarmAway.descriptionId("itemGroup", "main"), "Farm Away");
 		add(FAItems.ENHANCED_HOE.get(), "Enhanced Hoe");
+		add(FAItems.ENHANCED_HOE.get().getDescriptionId() + ".tooltip", "Able to Till:");
 		add(FABlocks.STONE_FARMLAND.get(), "Stone Farmland");
 		add(FABlocks.NETHERRACK_FARMLAND.get(), "Netherrack Farmland");
 		add(FABlocks.END_STONE_FARMLAND.get(), "End Stone Farmland");
@@ -31,7 +32,9 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FABlocks.STRONG_CARROTS.get(), "Strong Carrots");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "Explosion Potato");
+		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "When Crouching: Can be thrown");
 		add(FAItems.BLUES_CARROT.get(), "Blues Carrot");
+		add(FAItems.BLUES_CARROT.get().getDescriptionId() + ".tooltip", "When Eaten: Damage taken may be canceled or doubled");
 		add(FAItems.STRONG_CARROT.get(), "Strong Carrot");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "Explosion Potato");

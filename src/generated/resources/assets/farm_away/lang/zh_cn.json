@@ -11,8 +11,11 @@
   "effect.farm_away.blues": "蓝",
   "entity.farm_away.explosion_potato": "爆炎土豆",
   "item.farm_away.blues_carrot": "蓝胡萝卜",
+  "item.farm_away.blues_carrot.tooltip": "食用后：受到伤害可能取消或翻倍",
   "item.farm_away.enhanced_hoe": "强化锄",
+  "item.farm_away.enhanced_hoe.tooltip": "可开垦：",
   "item.farm_away.explosion_potato": "爆炎土豆",
+  "item.farm_away.explosion_potato.tooltip": "潜行时：可投掷",
   "item.farm_away.strong_carrot": "强力胡萝卜",
   "itemGroup.farm_away.main": "田园巫术"
 }
