@@ -6,6 +6,7 @@ import ho.artisan.farmaway.common.registry.FABlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -42,6 +43,19 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 		tag(FABlockTags.SCARLET_FARMLANDS).add(FABlocks.GRANITE_FARMLAND.get());
 		tag(FABlockTags.RAY_FARMLANDS).add(FABlocks.ANDESITE_FARMLAND.get());
 		tag(FABlockTags.WIND_FARMLANDS).add(FABlocks.DIORITE_FARMLAND.get());
+		tag(FABlockTags.PHANTOM_RANDOM_BLOCKS).add(
+			Blocks.AMETHYST_CLUSTER,
+			Blocks.DIAMOND_BLOCK,
+			Blocks.GOLD_BLOCK,
+			Blocks.OBSIDIAN,
+			Blocks.OBSERVER,
+			Blocks.WHITE_WOOL,
+			Blocks.LAVA,
+			Blocks.FARMLAND,
+			Blocks.DAMAGED_ANVIL,
+			Blocks.TNT,
+			Blocks.ANCIENT_DEBRIS
+		);
 		tag(FABlockTags.FARMLANDS).addTags(FABlockTags.TERRA_FARMLANDS, FABlockTags.FLAME_FARMLANDS, FABlockTags.SHADOW_FARMLANDS, FABlockTags.SCARLET_FARMLANDS, FABlockTags.RAY_FARMLANDS, FABlockTags.WIND_FARMLANDS);
 	}
 }

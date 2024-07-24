@@ -1,11 +1,18 @@
 package ho.artisan.farmaway.common.event;
 
 import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FABlocks;
 import ho.artisan.farmaway.common.registry.FAMobEffects;
+import ho.artisan.farmaway.common.util.RandomUtil;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
+
+import java.util.Optional;
 
 @EventBusSubscriber(modid = FarmAway.MOD_ID)
 public class FAEvents {
@@ -20,6 +27,24 @@ public class FAEvents {
 				} else {
 					event.setAmount(event.getOriginalAmount() * 2);
 				}
+			}
+		}
+	}
+
+	@SubscribeEvent
+	private static void onBlockBreak(BlockEvent.BreakEvent event) {
+		Optional<Block> block = RandomUtil.randomBlock();
+		if (event.getPlayer().hasEffect(FAMobEffects.PHANTOM)) {
+			if (!event.getLevel().getBlockState(event.getPos()).is(FABlocks.PHANTOM_DIRT)) {
+				if (RandomSource.create().nextInt(100) > 80) {
+					event.setCanceled(true);
+					block.ifPresent(value -> event.getLevel().setBlock(event.getPos(), value.defaultBlockState(), 2));
+				} else {
+					event.setCanceled(true);
+					event.getLevel().setBlock(event.getPos(), FABlocks.PHANTOM_DIRT.get().defaultBlockState(), 2);
+				}
+			} else {
+				event.setCanceled(true);
 			}
 		}
 	}

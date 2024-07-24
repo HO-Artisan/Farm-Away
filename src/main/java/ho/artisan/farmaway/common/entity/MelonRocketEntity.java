@@ -2,7 +2,6 @@ package ho.artisan.farmaway.common.entity;
 
 import ho.artisan.farmaway.common.registry.FAEntities;
 import ho.artisan.farmaway.common.registry.FAItems;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -18,9 +17,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
@@ -55,6 +52,7 @@ public class MelonRocketEntity extends Projectile implements ItemSupplier {
 			double f = RandomSource.create().nextDouble();
 			ItemEntity seed = new ItemEntity(this.level(), this.getX() + f, this.getY(), this.getZ() + f, FAItems.MELON_ROCKET_SEED.toStack());
 			this.level().addFreshEntity(seed);
+			this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.AMBIENT, 3.0F, 1.0F);
 		}
 		this.discard();
 	}

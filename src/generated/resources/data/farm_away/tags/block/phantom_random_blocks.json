@@ -1,0 +1,15 @@
+{
+  "values": [
+    "minecraft:amethyst_cluster",
+    "minecraft:diamond_block",
+    "minecraft:gold_block",
+    "minecraft:obsidian",
+    "minecraft:observer",
+    "minecraft:white_wool",
+    "minecraft:lava",
+    "minecraft:farmland",
+    "minecraft:damaged_anvil",
+    "minecraft:tnt",
+    "minecraft:ancient_debris"
+  ]
+}

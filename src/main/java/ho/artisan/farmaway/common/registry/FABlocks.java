@@ -2,6 +2,7 @@ package ho.artisan.farmaway.common.registry;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.block.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -30,8 +31,12 @@ public class FABlocks {
 	// Crops
 	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATOES = BLOCKS.register("explosion_potatoes", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<BluesCarrotBlock> BLUES_CARROTS = BLOCKS.register("blues_carrots", () -> new BluesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<PhantomPotatoBlock> PHANTOM_POTATOES = BLOCKS.register("phantom_potatoes", () -> new PhantomPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROTS = BLOCKS.register("strong_carrots", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<MelonRocketBlock> MELON_ROCKET = BLOCKS.register("melon_rocket", () -> new MelonRocketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM).randomTicks()));
+
+	//Commons
+	public static final DeferredBlock<Block> PHANTOM_DIRT = BLOCKS.register("phantom_dirt", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 
 	private static DeferredBlock<FarmlandBlock> registerFarmland(String name, BlockBehaviour.Properties properties) {
 		return BLOCKS.register(name, () -> new FarmlandBlock(properties));
