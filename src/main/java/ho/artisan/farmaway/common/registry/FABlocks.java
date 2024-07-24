@@ -1,10 +1,7 @@
 package ho.artisan.farmaway.common.registry;
 
 import ho.artisan.farmaway.FarmAway;
-import ho.artisan.farmaway.common.block.BluesCarrotBlock;
-import ho.artisan.farmaway.common.block.ExplosionPotatoBlock;
-import ho.artisan.farmaway.common.block.FarmlandBlock;
-import ho.artisan.farmaway.common.block.StrongCarrotBlock;
+import ho.artisan.farmaway.common.block.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -34,6 +31,7 @@ public class FABlocks {
 	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATOES = BLOCKS.register("explosion_potatoes", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<BluesCarrotBlock> BLUES_CARROTS = BLOCKS.register("blues_carrots", () -> new BluesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROTS = BLOCKS.register("strong_carrots", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<MelonRocketBlock> MELON_ROCKET = BLOCKS.register("melon_rocket", () -> new MelonRocketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM).randomTicks()));
 
 	private static DeferredBlock<FarmlandBlock> registerFarmland(String name, BlockBehaviour.Properties properties) {
 		return BLOCKS.register(name, () -> new FarmlandBlock(properties));

@@ -1,6 +1,8 @@
 package ho.artisan.farmaway.client.event;
 
 import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.client.renderer.MelonRocketRenderer;
+import ho.artisan.farmaway.common.entity.MelonRocketEntity;
 import ho.artisan.farmaway.common.registry.FAEntities;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
@@ -15,5 +17,6 @@ public class FAClientEvents {
 	@SubscribeEvent
 	private static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(FAEntities.EXPLOSION_POTATO.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(FAEntities.MELON_ROCKET.get(), MelonRocketRenderer::new);
 	}
 }
