@@ -31,6 +31,7 @@ public class FABlocks {
 	// Crops
 	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATOES = BLOCKS.register("explosion_potatoes", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<SoftPotatoBlock> SOFT_POTATOES = BLOCKS.register("soft_potatoes", () -> new SoftPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
+	public static final DeferredBlock<GerberaPotatoBlock> GERBERA_POTATOES = BLOCKS.register("gerbera_potatoes", () -> new GerberaPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<RosePotatoBlock> ROSE_POTATOES = BLOCKS.register("rose_potatoes", () -> new RosePotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<PhantomBeetrootBlock> PHANTOM_BEETROOTS = BLOCKS.register("phantom_beetroots", () -> new PhantomBeetrootBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS).randomTicks()));
 	public static final DeferredBlock<BluesCarrotBlock> BLUES_CARROTS = BLOCKS.register("blues_carrots", () -> new BluesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));

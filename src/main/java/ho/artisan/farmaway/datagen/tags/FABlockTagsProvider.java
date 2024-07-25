@@ -42,6 +42,9 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 		tag(FABlockTags.SCARLET_CROPS).add(
 			FABlocks.ROSE_POTATOES.get()
 		);
+		tag(FABlockTags.RAY_CROPS).add(
+			FABlocks.GERBERA_POTATOES.get()
+		);
 		tag(FABlockTags.TERRA_FARMLANDS).add(FABlocks.STONE_FARMLAND.get());
 		tag(FABlockTags.FLAME_FARMLANDS).add(FABlocks.NETHERRACK_FARMLAND.get());
 		tag(FABlockTags.SHADOW_FARMLANDS).add(FABlocks.END_STONE_FARMLAND.get());

@@ -37,5 +37,8 @@ public class FAItemTagsProvider extends ItemTagsProvider {
 		tag(FAItemTags.WIND_SEEDS).add(
 			FAItems.MELON_ROCKET_SEED.get()
 		);
+		tag(FAItemTags.RAY_SEEDS).add(
+			FAItems.GERBERA_POTATO.get()
+		);
 	}
 }
