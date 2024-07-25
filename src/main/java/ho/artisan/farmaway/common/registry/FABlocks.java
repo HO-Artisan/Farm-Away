@@ -31,14 +31,15 @@ public class FABlocks {
 	// Crops
 	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATOES = BLOCKS.register("explosion_potatoes", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<SoftPotatoBlock> SOFT_POTATOES = BLOCKS.register("soft_potatoes", () -> new SoftPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
+	public static final DeferredBlock<RosePotatoBlock> ROSE_POTATOES = BLOCKS.register("rose_potatoes", () -> new RosePotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<PhantomBeetrootBlock> PHANTOM_BEETROOTS = BLOCKS.register("phantom_beetroots", () -> new PhantomBeetrootBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS).randomTicks()));
 	public static final DeferredBlock<BluesCarrotBlock> BLUES_CARROTS = BLOCKS.register("blues_carrots", () -> new BluesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<PhantomPotatoBlock> PHANTOM_POTATOES = BLOCKS.register("phantom_potatoes", () -> new PhantomPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROTS = BLOCKS.register("strong_carrots", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<MelonRocketBlock> MELON_ROCKET = BLOCKS.register("melon_rocket", () -> new MelonRocketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM).randomTicks()));
-
 	//Commons
 	public static final DeferredBlock<Block> PHANTOM_DIRT = BLOCKS.register("phantom_dirt", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+	public static final DeferredBlock<Block> SOLID_CLOUD = BLOCKS.register("solid_cloud", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_WOOL)));
 
 	private static DeferredBlock<FarmlandBlock> registerFarmland(String name, BlockBehaviour.Properties properties) {
 		return BLOCKS.register(name, () -> new FarmlandBlock(properties));

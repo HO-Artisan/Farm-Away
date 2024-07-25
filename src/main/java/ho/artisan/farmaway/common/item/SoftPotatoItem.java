@@ -19,9 +19,9 @@ public class SoftPotatoItem extends ItemNameBlockItem {
 
 	@Override
 	public InteractionResult useOn(UseOnContext context) {
-		super.useOn(context);
 		if (context.getPlayer() != null) {
 			if (context.getLevel().getBlockState(context.getClickedPos()).is(FABlocks.PHANTOM_DIRT)) {
+				context.getLevel().setBlock(context.getClickedPos(), FABlocks.SOLID_CLOUD.get().defaultBlockState(), 2);
 				context.getPlayer().setHealth(context.getPlayer().getMaxHealth());
 				context.getItemInHand().consume(1, context.getPlayer());
 				return InteractionResult.sidedSuccess(true);
@@ -32,8 +32,10 @@ public class SoftPotatoItem extends ItemNameBlockItem {
 				context.getPlayer().setHealth(1.0f);
 				context.getLevel().playSound(null, context.getPlayer().getX(), context.getPlayer().getY(), context.getPlayer().getZ(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.NEUTRAL, 0.5F, 0.4F / (context.getLevel().getRandom().nextFloat() * 0.4F + 0.8F));
 				return InteractionResult.sidedSuccess(true);
+			} else {
+				return super.useOn(context);
 			}
 		}
-		return InteractionResult.PASS;
+		return super.useOn(context);
 	}
 }

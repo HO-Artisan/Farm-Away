@@ -24,15 +24,17 @@ public class FAItems {
 	public static final DeferredItem<BlockItem> GRANITE_FARMLAND = registerBlock(FABlocks.GRANITE_FARMLAND);
 	public static final DeferredItem<BlockItem> ANDESITE_FARMLAND = registerBlock(FABlocks.ANDESITE_FARMLAND);
 	public static final DeferredItem<BlockItem> DIORITE_FARMLAND = registerBlock(FABlocks.DIORITE_FARMLAND);
-	public static final DeferredItem<BlockItem> MELON_ROCKET_SEED = ITEMS.register("melon_rocket_seed", () -> new BlockItem(FABlocks.MELON_ROCKET.get(), new Item.Properties()));
+	public static final DeferredItem<BlockItem> MELON_ROCKET_SEED = ITEMS.register("melon_rocket_seed", () -> new ItemNameBlockItem(FABlocks.MELON_ROCKET.get(), new Item.Properties()));
 	public static final DeferredItem<ExplosionPotatoItem> EXPLOSION_POTATO = ITEMS.register("explosion_potato", () -> new ExplosionPotatoItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationModifier(0).build())));
 	public static final DeferredItem<PhantomBeetrootItem> PHANTOM_BEETROOT = ITEMS.register("phantom_beetroot", () -> new PhantomBeetrootItem(FABlocks.PHANTOM_BEETROOTS.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(0).saturationModifier(0).build())));
 	public static final DeferredItem<BluesCarrotItem> BLUES_CARROT = ITEMS.register("blues_carrot", () -> new BluesCarrotItem(FABlocks.BLUES_CARROTS.get(), new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(0).saturationModifier(0).effect(() -> new MobEffectInstance(FAMobEffects.BLUES, 2000), 1).build())));
 	public static final DeferredItem<SoftPotatoItem> SOFT_POTATO = ITEMS.register("soft_potato", () -> new SoftPotatoItem(FABlocks.SOFT_POTATOES.get(), new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(0).saturationModifier(2).build())));
-	public static final DeferredItem<BlockItem> PHANTOM_POTATO = ITEMS.register("phantom_potato", () -> new BlockItem(FABlocks.PHANTOM_POTATOES.get(), new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(0).saturationModifier(0).effect(() -> new MobEffectInstance(FAMobEffects.PHANTOM, 2000), 1).build())));
+	public static final DeferredItem<BlockItem> PHANTOM_POTATO = ITEMS.register("phantom_potato", () -> new ItemNameBlockItem(FABlocks.PHANTOM_POTATOES.get(), new Item.Properties().food(new FoodProperties.Builder().alwaysEdible().nutrition(0).saturationModifier(0).effect(() -> new MobEffectInstance(FAMobEffects.PHANTOM, 2000), 1).build())));
 	public static final DeferredItem<StrongCarrotItem> STRONG_CARROT = ITEMS.register("strong_carrot", () -> new StrongCarrotItem(FABlocks.STRONG_CARROTS.get(), new Item.Properties().attributes(SwordItem.createAttributes(Tiers.GOLD, 1.0F, 5.68F)).durability(300).food(new FoodProperties.Builder().nutrition(2).saturationModifier(2).build())));
 	public static final DeferredItem<MelonRocketItem> MELON_ROCKET = ITEMS.register("melon_rocket", () -> new MelonRocketItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0).build())));
+	public static final DeferredItem<RosePotatoItem> ROSE_POTATO = ITEMS.register("rose_potato", () -> new RosePotatoItem(FABlocks.ROSE_POTATOES.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(1).build())));
 	public static final DeferredItem<BlockItem> PHANTOM_DIRT = registerBlock(FABlocks.PHANTOM_DIRT);
+	public static final DeferredItem<BlockItem> SOLID_CLOUD = registerBlock(FABlocks.SOLID_CLOUD);
 	public static DeferredItem<BlockItem> registerBlock(DeferredBlock<? extends Block> block) {
 		return ITEMS.registerSimpleBlockItem(block);
 	}
