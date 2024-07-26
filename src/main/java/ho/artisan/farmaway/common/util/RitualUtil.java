@@ -10,7 +10,7 @@ public class RitualUtil {
 		var r = Ritual.of(level.registryAccess(), key);
 		if (r.isPresent()) {
 			var ritual = r.get();
-			if (level.getBlockState(pos).getBlock() == ritual.center()) {
+			if (level.getBlockState(pos).getBlock() == ritual.center().value()) {
 				level.setBlock(pos.below(), ritual.baseOut().value().defaultBlockState(), 2);
 				level.setBlock(pos, ritual.centerOut().value().defaultBlockState(), 2);
 			}

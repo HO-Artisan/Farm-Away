@@ -23,8 +23,6 @@ public class RosePotatoItem extends ItemNameBlockItem {
 		if (level.getBlockState(context.getClickedPos()).getBlock() instanceof CropBlock crop && context.getPlayer() != null) {
 			if (crop == FABlocks.EMPTY_ROOT.get()) {
 
-			} else if (crop == Blocks.STONE) {
-				RitualUtil.start(context.getLevel(), context.getClickedPos(), FARituals.POTATO_RITUAL);
 			} else {
 				crop.growCrops(level, context.getClickedPos(), level.getBlockState(context.getClickedPos()));
 				context.getPlayer().hurt(level.damageSources().magic(), 2.0f);
