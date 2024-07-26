@@ -7,6 +7,7 @@ import ho.artisan.farmaway.common.util.RandomUtil;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -34,14 +35,22 @@ public class FAEvents {
 	@SubscribeEvent
 	private static void onBlockBreak(BlockEvent.BreakEvent event) {
 		Optional<Block> block = RandomUtil.randomBlock();
-		if (event.getPlayer().hasEffect(FAMobEffects.PHANTOM)) {
+		var block_state = event.getLevel().getBlockState(event.getPos());
+		if (event.getPlayer().hasEffect(FAMobEffects.VOID)) {
+			event.setCanceled(true);
+		} else if (event.getPlayer().hasEffect(FAMobEffects.PHANTOM)) {
 			if (!event.getLevel().getBlockState(event.getPos()).is(FABlocks.PHANTOM_DIRT)) {
-				if (RandomSource.create().nextInt(100) > 80) {
+				if (block_state.getBlock() instanceof CropBlock crop && crop != FABlocks.EMPTY_ROOT.get() && crop.getAge(block_state) == 0) {
 					event.setCanceled(true);
-					block.ifPresent(value -> event.getLevel().setBlock(event.getPos(), value.defaultBlockState(), 2));
+					event.getLevel().setBlock(event.getPos(), FABlocks.EMPTY_ROOT.get().defaultBlockState(), 2);
 				} else {
-					event.setCanceled(true);
-					event.getLevel().setBlock(event.getPos(), FABlocks.PHANTOM_DIRT.get().defaultBlockState(), 2);
+					if (RandomSource.create().nextInt(100) > 80) {
+						event.setCanceled(true);
+						block.ifPresent(value -> event.getLevel().setBlock(event.getPos(), value.defaultBlockState(), 2));
+					} else {
+						event.setCanceled(true);
+						event.getLevel().setBlock(event.getPos(), FABlocks.PHANTOM_DIRT.get().defaultBlockState(), 2);
+					}
 				}
 			} else {
 				event.setCanceled(true);

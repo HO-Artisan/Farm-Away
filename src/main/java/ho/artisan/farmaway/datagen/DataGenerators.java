@@ -6,6 +6,7 @@ import ho.artisan.farmaway.datagen.lang.FAEnglishLanguageProvider;
 import ho.artisan.farmaway.datagen.loot.FALootProvider;
 import ho.artisan.farmaway.datagen.model.FABlockStateProvider;
 import ho.artisan.farmaway.datagen.model.FAItemModelProvider;
+import ho.artisan.farmaway.datagen.rotual.FARitualsProvider;
 import ho.artisan.farmaway.datagen.tags.FABlockTagsProvider;
 import ho.artisan.farmaway.datagen.tags.FAItemTagsProvider;
 import net.minecraft.core.HolderLookup;
@@ -39,5 +40,7 @@ public class DataGenerators {
 
 		generator.addProvider(event.includeServer(), new FARecipeProvider(output, lookupProvider));
 		generator.addProvider(event.includeServer(), new FALootProvider(output, lookupProvider));
+
+		generator.addProvider(event.includeServer(), new FARitualsProvider(output, lookupProvider));
 	}
 }

@@ -29,6 +29,7 @@ public class FABlocks {
 	public static final DeferredBlock<FarmlandBlock> DIORITE_FARMLAND = registerFarmland("diorite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.DIORITE).randomTicks());
 
 	// Crops
+	public static final DeferredBlock<EmptyRootBlock> EMPTY_ROOT = BLOCKS.register("empty_root", () -> new EmptyRootBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT).randomTicks()));
 	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATOES = BLOCKS.register("explosion_potatoes", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<SoftPotatoBlock> SOFT_POTATOES = BLOCKS.register("soft_potatoes", () -> new SoftPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<GerberaPotatoBlock> GERBERA_POTATOES = BLOCKS.register("gerbera_potatoes", () -> new GerberaPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));

@@ -1,5 +1,6 @@
 package ho.artisan.farmaway;
 
+import ho.artisan.farmaway.common.data.FARegistries;
 import ho.artisan.farmaway.common.registry.*;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
@@ -16,6 +17,7 @@ public class FarmAway {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public FarmAway(IEventBus bus, ModContainer container) {
+		FARegistries.bring();
 		FABlocks.register(bus);
 		FAItems.register(bus);
 		FATabs.register(bus);
