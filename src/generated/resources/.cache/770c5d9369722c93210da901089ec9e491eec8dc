@@ -1,0 +1,15 @@
+// 1.21	2024-07-26T18:40:32.3926357	Tags for minecraft:block mod id farm_away
+65acf21918b8eea69f170c982acb3c4bc6860f86 data/farm_away/tags/block/crops/flame.json
+d0f487c88a8569039bcb9b61a9bea88da8b49918 data/farm_away/tags/block/crops/ray.json
+8a35e5cef0a99685178541b83488717a32a8b5b4 data/farm_away/tags/block/crops/scarlet.json
+305c408175e5c9378a2f2c508861b4c816c59f17 data/farm_away/tags/block/crops/shadow.json
+ed833f1dd586169e154f1eb2bfd1ddad6d58096c data/farm_away/tags/block/crops/wind.json
+c1826168e18fa3a5776d3046d94c9036e7cc55fe data/farm_away/tags/block/farmlands.json
+700b82f15080a74788f4041b7c6cf7a16f5b4827 data/farm_away/tags/block/farmlands/flame.json
+bc237eb5c22e64aa55de6752af397805b6441585 data/farm_away/tags/block/farmlands/ray.json
+60a41175580c9581f9a76fdf39ba19648b5095de data/farm_away/tags/block/farmlands/scarlet.json
+fa529999f9c4350a42a467932a0c2c7ac5c95b92 data/farm_away/tags/block/farmlands/shadow.json
+0475387aef24a934bfd1a0bc2ed8de00df4e8395 data/farm_away/tags/block/farmlands/terra.json
+6cc62ee0fcc001eedb2ef1b7207c8ec5d052c474 data/farm_away/tags/block/farmlands/wind.json
+0404c6fd1e074c2820e9a982c3765ef465e6ee63 data/farm_away/tags/block/phantom_random_blocks.json
+fa3c2f8129d1c4b0ff2e6fac1c12078cf0d0468c data/minecraft/tags/block/mineable/pickaxe.json

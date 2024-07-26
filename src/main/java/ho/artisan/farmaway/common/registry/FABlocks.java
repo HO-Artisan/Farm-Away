@@ -39,7 +39,8 @@ public class FABlocks {
 	public static final DeferredBlock<PhantomPotatoBlock> PHANTOM_POTATOES = BLOCKS.register("phantom_potatoes", () -> new PhantomPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROTS = BLOCKS.register("strong_carrots", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<MelonRocketBlock> MELON_ROCKET = BLOCKS.register("melon_rocket", () -> new MelonRocketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM).randomTicks()));
-	//Commons
+
+	// Commons
 	public static final DeferredBlock<Block> PHANTOM_DIRT = BLOCKS.register("phantom_dirt", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 	public static final DeferredBlock<Block> SOLID_CLOUD = BLOCKS.register("solid_cloud", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_WOOL)));
 

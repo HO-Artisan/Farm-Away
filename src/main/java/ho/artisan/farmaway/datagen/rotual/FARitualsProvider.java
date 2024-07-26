@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class FARitualsProvider extends DatapackBuiltinEntriesProvider {
 	public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(FARegistries.RITUAL, FARituals::init);
+
 	public FARitualsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, BUILDER, Set.of(FarmAway.MOD_ID));
 	}

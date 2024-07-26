@@ -37,6 +37,7 @@ public class FAItems {
 	public static final DeferredItem<RosePotatoItem> ROSE_POTATO = ITEMS.register("rose_potato", () -> new RosePotatoItem(FABlocks.ROSE_POTATOES.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(1).build())));
 	public static final DeferredItem<BlockItem> PHANTOM_DIRT = registerBlock(FABlocks.PHANTOM_DIRT);
 	public static final DeferredItem<BlockItem> SOLID_CLOUD = registerBlock(FABlocks.SOLID_CLOUD);
+
 	public static DeferredItem<BlockItem> registerBlock(DeferredBlock<? extends Block> block) {
 		return ITEMS.registerSimpleBlockItem(block);
 	}

@@ -18,6 +18,7 @@ public class FAEntities {
 	public static final DeferredHolder<EntityType<?>, EntityType<PhantomBeetrootEntity>> PHANTOM_BEETROOT = ENTITIES.register("phantom_beetroot", () -> EntityType.Builder.<PhantomBeetrootEntity>of(PhantomBeetrootEntity::new, MobCategory.MISC).build(FarmAway.MOD_ID + "phantom_beetroot"));
 	public static final DeferredHolder<EntityType<?>, EntityType<MelonRocketEntity>> MELON_ROCKET = ENTITIES.register("melon_rocket", () -> EntityType.Builder.<MelonRocketEntity>of(MelonRocketEntity::new, MobCategory.MISC).build(FarmAway.MOD_ID + "melon_rocket"));
 	public static final DeferredHolder<EntityType<?>, EntityType<PotatoLaserEntity>> POTATO_LASER = ENTITIES.register("potato_laser", () -> EntityType.Builder.<PotatoLaserEntity>of(PotatoLaserEntity::new, MobCategory.MISC).build(FarmAway.MOD_ID + "melon_rocket"));
+
 	public static void register(IEventBus bus) {
 		ENTITIES.register(bus);
 	}

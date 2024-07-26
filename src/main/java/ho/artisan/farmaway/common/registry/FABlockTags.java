@@ -21,6 +21,7 @@ public class FABlockTags {
 	public static TagKey<Block> RAY_CROPS = blockTag("crops/ray");
 	public static TagKey<Block> WIND_CROPS = blockTag("crops/wind");
 	public static TagKey<Block> PHANTOM_RANDOM_BLOCKS = blockTag("phantom_random_blocks");
+
 	public static TagKey<Block> blockTag(String name) {
 		return TagKey.create(Registries.BLOCK, FarmAway.getResourceLocation(name));
 	}

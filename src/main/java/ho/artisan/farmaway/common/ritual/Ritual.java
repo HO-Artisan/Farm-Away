@@ -13,14 +13,10 @@ import net.minecraft.world.level.block.Block;
 import java.util.List;
 import java.util.Optional;
 
-public record Ritual(Holder<Block> centre, Holder<Block> centreOut, List<Holder<Block>> ritualBase, Holder<Block> baseOut) {
-	public Ritual(Block centre, Block centreOut, List<Block> base, Block baseOut) {
-		this(Holder.direct(centre), Holder.direct(centreOut), base.stream().map(Holder::direct).toList(), Holder.direct(baseOut));
-	}
-
+public record Ritual(Holder<Block> center, Holder<Block> centerOut, List<Holder<Block>> ritualBase, Holder<Block> baseOut) {
 	public static final Codec<Ritual> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-		BuiltInRegistries.BLOCK.holderByNameCodec().fieldOf("centre").forGetter(Ritual::centre),
-		BuiltInRegistries.BLOCK.holderByNameCodec().fieldOf("centre_out").forGetter(Ritual::centreOut),
+		BuiltInRegistries.BLOCK.holderByNameCodec().fieldOf("center").forGetter(Ritual::center),
+		BuiltInRegistries.BLOCK.holderByNameCodec().fieldOf("center_out").forGetter(Ritual::centerOut),
 		BuiltInRegistries.BLOCK.holderByNameCodec().listOf().fieldOf("ritual_base").forGetter(Ritual::ritualBase),
 		BuiltInRegistries.BLOCK.holderByNameCodec().fieldOf("base_out").forGetter(Ritual::baseOut)
 	).apply(instance, Ritual::new));

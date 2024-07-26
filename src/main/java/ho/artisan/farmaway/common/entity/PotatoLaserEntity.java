@@ -8,17 +8,13 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -38,9 +34,11 @@ public class PotatoLaserEntity extends Projectile implements ItemSupplier {
 	private static final EntityDataAccessor<Integer> SPLIT_CHANCE = SynchedEntityData.defineId(
 		PotatoLaserEntity.class, EntityDataSerializers.INT
 	);
+
 	public PotatoLaserEntity(EntityType<? extends Projectile> entityType, Level level) {
 		super(entityType, level);
 	}
+
 	public PotatoLaserEntity(Level level, LivingEntity shooter, int lifetime, double x, double y, double z) {
 		this(FAEntities.POTATO_LASER.get(), level);
 		this.lifetime = lifetime;
@@ -57,6 +55,7 @@ public class PotatoLaserEntity extends Projectile implements ItemSupplier {
 		this.setPos(x, y + 1.5, z);
 		this.noPhysics = false;
 	}
+
 	public PotatoLaserEntity(Level level, double x, double y, double z) {
 		this(FAEntities.POTATO_LASER.get(), level);
 		this.setPos(x, y, z);

@@ -19,6 +19,7 @@ public class EmptyRootBlock extends CropBlock {
 	public MapCodec<EmptyRootBlock> codec() {
 		return CODEC;
 	}
+
 	public EmptyRootBlock(Properties properties) {
 		super(properties);
 	}

@@ -31,15 +31,18 @@ public class MelonRocketEntity extends Projectile implements ItemSupplier {
 	);
 	private int life;
 	private int lifetime;
+
 	public MelonRocketEntity(EntityType<? extends Projectile> entityType, Level level) {
 		super(entityType, level);
 	}
+
 	public MelonRocketEntity(Level level, double x, double y, double z) {
 		this(FAEntities.MELON_ROCKET.get(), level);
 		this.life = 0;
 		this.lifetime = 16 + this.random.nextInt(6) + this.random.nextInt(7);
 		this.setPos(x, y, z);
 	}
+
 	public MelonRocketEntity(Level level, Entity shooter, double x, double y, double z) {
 		this(level, x, y, z);
 		this.setOwner(shooter);
@@ -129,6 +132,7 @@ public class MelonRocketEntity extends Projectile implements ItemSupplier {
 
 		super.onHitBlock(result);
 	}
+
 	@Override
 	public boolean isAttackable() {
 		return false;

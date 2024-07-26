@@ -4,7 +4,6 @@ import ho.artisan.farmaway.common.registry.FABlocks;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.context.UseOnContext;

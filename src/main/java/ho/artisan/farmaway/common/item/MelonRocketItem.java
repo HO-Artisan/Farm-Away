@@ -31,9 +31,9 @@ public class MelonRocketItem extends Item implements ProjectileItem {
 			MelonRocketEntity melon = new MelonRocketEntity(
 				level,
 				player,
-				vec3.x + (double)direction.getStepX() * 0.15,
-				vec3.y + (double)direction.getStepY() * 0.15,
-				vec3.z + (double)direction.getStepZ() * 0.15
+				vec3.x + (double) direction.getStepX() * 0.15,
+				vec3.y + (double) direction.getStepY() * 0.15,
+				vec3.z + (double) direction.getStepZ() * 0.15
 			);
 			level.addFreshEntity(melon);
 			itemstack.shrink(1);
@@ -60,9 +60,9 @@ public class MelonRocketItem extends Item implements ProjectileItem {
 
 	private static Vec3 getEntityPokingOutOfBlockPos(BlockSource source, Direction direction) {
 		return source.center().add(
-				(double)direction.getStepX() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getWidth() / 2.0),
-				(double)direction.getStepY() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getHeight() / 2.0) - (double) FAEntities.MELON_ROCKET.get().getHeight() / 2.0,
-				(double)direction.getStepZ() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getWidth() / 2.0)
+			(double) direction.getStepX() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getWidth() / 2.0),
+			(double) direction.getStepY() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getHeight() / 2.0) - (double) FAEntities.MELON_ROCKET.get().getHeight() / 2.0,
+			(double) direction.getStepZ() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getWidth() / 2.0)
 		);
 	}
 }

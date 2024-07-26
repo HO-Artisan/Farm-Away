@@ -2,12 +2,14 @@ package ho.artisan.farmaway;
 
 import ho.artisan.farmaway.common.data.FARegistries;
 import ho.artisan.farmaway.common.registry.*;
+import ho.artisan.farmaway.common.ritual.Ritual;
 import net.minecraft.Util;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.registries.DataPackRegistryEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +19,8 @@ public class FarmAway {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public FarmAway(IEventBus bus, ModContainer container) {
-		FARegistries.bring();
+		bus.addListener(DataPackRegistryEvent.NewRegistry.class, (event) -> event.dataPackRegistry(FARegistries.RITUAL, Ritual.CODEC, Ritual.CODEC));
+
 		FABlocks.register(bus);
 		FAItems.register(bus);
 		FATabs.register(bus);

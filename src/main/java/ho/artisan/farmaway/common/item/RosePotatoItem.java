@@ -2,7 +2,6 @@ package ho.artisan.farmaway.common.item;
 
 import ho.artisan.farmaway.common.data.FARituals;
 import ho.artisan.farmaway.common.registry.FABlocks;
-import ho.artisan.farmaway.common.ritual.Ritual;
 import ho.artisan.farmaway.common.util.RitualUtil;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
@@ -24,7 +23,7 @@ public class RosePotatoItem extends ItemNameBlockItem {
 		if (level.getBlockState(context.getClickedPos()).getBlock() instanceof CropBlock crop && context.getPlayer() != null) {
 			if (crop == FABlocks.EMPTY_ROOT.get()) {
 
-			} else if(crop == Blocks.STONE) {
+			} else if (crop == Blocks.STONE) {
 				RitualUtil.start(context.getLevel(), context.getClickedPos(), FARituals.POTATO_RITUAL);
 			} else {
 				crop.growCrops(level, context.getClickedPos(), level.getBlockState(context.getClickedPos()));
