@@ -1,4 +1,4 @@
-package ho.artisan.farmaway.datagen.rotual;
+package ho.artisan.farmaway.datagen.datapack;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.data.FARegistries;
@@ -11,10 +11,11 @@ import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-public class FARitualsProvider extends DatapackBuiltinEntriesProvider {
-	public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder().add(FARegistries.RITUAL, FARituals::init);
+public class FADatapackBuiltinEntriesProvider extends DatapackBuiltinEntriesProvider {
+	public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
+		.add(FARegistries.RITUAL, FARituals::init);
 
-	public FARitualsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+	public FADatapackBuiltinEntriesProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries, BUILDER, Set.of(FarmAway.MOD_ID));
 	}
 }

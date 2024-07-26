@@ -1,13 +1,16 @@
 package ho.artisan.farmaway.common.event;
 
 import ho.artisan.farmaway.FarmAway;
+import ho.artisan.farmaway.common.registry.FABlockTags;
 import ho.artisan.farmaway.common.registry.FABlocks;
 import ho.artisan.farmaway.common.registry.FAMobEffects;
-import ho.artisan.farmaway.common.util.RandomUtil;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -34,13 +37,14 @@ public class FAEvents {
 
 	@SubscribeEvent
 	private static void onBlockBreak(BlockEvent.BreakEvent event) {
-		Optional<Block> block = RandomUtil.randomBlock();
-		var block_state = event.getLevel().getBlockState(event.getPos());
+		Optional<Block> block = BuiltInRegistries.BLOCK.getRandomElementOf(FABlockTags.PHANTOM_RANDOM_BLOCKS, RandomSource.create()).map(Holder::value);
+
+		BlockState state = event.getLevel().getBlockState(event.getPos());
 		if (event.getPlayer().hasEffect(FAMobEffects.VOID)) {
 			event.setCanceled(true);
 		} else if (event.getPlayer().hasEffect(FAMobEffects.PHANTOM)) {
 			if (!event.getLevel().getBlockState(event.getPos()).is(FABlocks.PHANTOM_DIRT)) {
-				if (block_state.getBlock() instanceof CropBlock crop && crop != FABlocks.EMPTY_ROOT.get() && crop.getAge(block_state) == 0) {
+				if (state.getBlock() instanceof CropBlock crop && crop != FABlocks.EMPTY_ROOT.get() && crop.getAge(state) == 0) {
 					event.setCanceled(true);
 					event.getLevel().setBlock(event.getPos(), FABlocks.EMPTY_ROOT.get().defaultBlockState(), 2);
 				} else {
