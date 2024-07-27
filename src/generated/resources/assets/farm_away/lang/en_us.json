@@ -22,6 +22,7 @@
   "entity.farm_away.explosion_potato": "Explosion Potato",
   "entity.farm_away.melon_rocket": "Melon Rocket",
   "entity.farm_away.phantom_beetroot": "Phantom Beetroot",
+  "fml.menu.mods.info.description.farm_away": "A magic mod about farming!",
   "item.farm_away.blues_carrot": "Blues Carrot",
   "item.farm_away.blues_carrot.tooltip": "When Eaten: Damage taken may be canceled or doubled",
   "item.farm_away.enhanced_hoe": "Enhanced Hoe",

@@ -17,6 +17,8 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
+		add("fml.menu.mods.info.description." + FarmAway.MOD_ID, "A magic mod about farming!");
+
 		add(FarmAway.descriptionId("itemGroup", "main"), "Farm Away");
 		add(FAItems.ENHANCED_HOE.get(), "Enhanced Hoe");
 		add(FAItems.ENHANCED_HOE.get().getDescriptionId() + ".tooltip", "Able to Till:");

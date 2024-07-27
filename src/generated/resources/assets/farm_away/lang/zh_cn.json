@@ -22,6 +22,7 @@
   "entity.farm_away.explosion_potato": "爆炎土豆",
   "entity.farm_away.melon_rocket": "西瓜火箭",
   "entity.farm_away.phantom_beetroot": "幻影甜菜根",
+  "fml.menu.mods.info.description.farm_away": "一个关于农耕的魔法 MOD！",
   "item.farm_away.blues_carrot": "忧郁胡萝卜",
   "item.farm_away.blues_carrot.tooltip": "食用后：受到伤害可能取消或翻倍",
   "item.farm_away.enhanced_hoe": "强化锄",

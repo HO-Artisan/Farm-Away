@@ -17,6 +17,8 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
+		add("fml.menu.mods.info.description." + FarmAway.MOD_ID, "一个关于农耕的魔法 MOD！");
+
 		add(FarmAway.descriptionId("itemGroup", "main"), "田园巫术");
 		add(FAItems.ENHANCED_HOE.get(), "强化锄");
 		add(FAItems.ENHANCED_HOE.get().getDescriptionId() + ".tooltip", "可开垦：");
