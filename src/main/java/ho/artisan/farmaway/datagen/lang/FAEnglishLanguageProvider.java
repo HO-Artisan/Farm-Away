@@ -27,8 +27,11 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FABlocks.ANDESITE_FARMLAND.get(), "Andesite Farmland");
 		add(FABlocks.DIORITE_FARMLAND.get(), "Diorite Farmland");
 		add(FABlocks.PHANTOM_DIRT.get(), "Phantom Dirt");
+		add(FABlocks.SOLID_CLOUD.get(), "Solid Cloud");
+		add(FABlocks.EMPTY_ROOT.get(), "Empty Root");
 
 		add(FABlocks.EXPLOSION_POTATOES.get(), "Explosion Potatoes");
+		add(FABlocks.GERBERA_POTATOES.get(), "Gerbera Potatoes");
 		add(FABlocks.BLUES_CARROTS.get(), "Blues Carrots");
 		add(FABlocks.STRONG_CARROTS.get(), "Strong Carrots");
 		add(FABlocks.PHANTOM_POTATOES.get(), "Phantom Potatoes");
@@ -39,6 +42,7 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 
 		add(FAItems.EXPLOSION_POTATO.get(), "Explosion Potato");
 		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "When Crouching: Can be thrown");
+		add(FAItems.GERBERA_POTATO.get(), "Gerbera Potato");
 		add(FAItems.BLUES_CARROT.get(), "Blues Carrot");
 		add(FAItems.BLUES_CARROT.get().getDescriptionId() + ".tooltip", "When Eaten: Damage taken may be canceled or doubled");
 		add(FAItems.STRONG_CARROT.get(), "Strong Carrot");

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=1": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=2": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=3": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=4": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=5": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=6": {
+      "model": "farm_away:block/empty_root"
+    },
+    "age=7": {
+      "model": "farm_away:block/empty_root"
+    }
+  }
+}

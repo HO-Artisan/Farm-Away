@@ -1,19 +1,19 @@
 package ho.artisan.farmaway.common.event;
 
-import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlockTags;
 import ho.artisan.farmaway.common.registry.FABlocks;
 import ho.artisan.farmaway.common.registry.FACropTransformationRegistry;
 import ho.artisan.farmaway.common.registry.FAItems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@EventBusSubscriber(modid = FarmAway.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class FASetupEvents {
-	@SubscribeEvent
+	public static void registerEvents(IEventBus modEventBus) {
+		modEventBus.addListener(FASetupEvents::onSetup);
+	}
+
 	private static void onSetup(FMLCommonSetupEvent event) {
 		DispenserBlock.registerProjectileBehavior(FAItems.EXPLOSION_POTATO.get());
 		FACropTransformationRegistry.register(FABlockTags.FLAME_FARMLANDS, Blocks.POTATOES, FABlocks.EXPLOSION_POTATOES.get());

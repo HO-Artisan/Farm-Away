@@ -27,8 +27,11 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FABlocks.ANDESITE_FARMLAND.get(), "安山岩耕地");
 		add(FABlocks.DIORITE_FARMLAND.get(), "闪长岩耕地");
 		add(FABlocks.PHANTOM_DIRT.get(), "幻影泥土");
+		add(FABlocks.SOLID_CLOUD.get(), "固态云");
+		add(FABlocks.EMPTY_ROOT.get(), "空白之根");
 
 		add(FABlocks.EXPLOSION_POTATOES.get(), "爆炎土豆");
+		add(FABlocks.GERBERA_POTATOES.get(), "戈波拉土豆");
 		add(FABlocks.BLUES_CARROTS.get(), "忧郁胡萝卜");
 		add(FABlocks.STRONG_CARROTS.get(), "强力胡萝卜");
 		add(FABlocks.PHANTOM_POTATOES.get(), "幻影土豆");
@@ -39,6 +42,7 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 
 		add(FAItems.EXPLOSION_POTATO.get(), "爆炎土豆");
 		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "潜行时：可投掷");
+		add(FAItems.GERBERA_POTATO.get(), "戈波拉土豆");
 		add(FAItems.BLUES_CARROT.get(), "忧郁胡萝卜");
 		add(FAItems.BLUES_CARROT.get().getDescriptionId() + ".tooltip", "食用后：受到伤害可能取消或翻倍");
 		add(FAItems.STRONG_CARROT.get(), "强力胡萝卜");

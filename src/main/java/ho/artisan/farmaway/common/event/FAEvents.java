@@ -1,6 +1,5 @@
 package ho.artisan.farmaway.common.event;
 
-import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.registry.FABlockTags;
 import ho.artisan.farmaway.common.registry.FABlocks;
 import ho.artisan.farmaway.common.registry.FAMobEffects;
@@ -11,16 +10,18 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import java.util.Optional;
 
-@EventBusSubscriber(modid = FarmAway.MOD_ID)
 public class FAEvents {
-	@SubscribeEvent
+	public static void registerEvents(IEventBus forgeEventbus) {
+		forgeEventbus.addListener(FAEvents::onLivingIncomingDamage);
+		forgeEventbus.addListener(FAEvents::onBlockBreak);
+	}
+
 	private static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
 		if (event.getEntity().hasEffect(FAMobEffects.BLUES)) {
 			MobEffectInstance instance = event.getEntity().getEffect(FAMobEffects.BLUES);
@@ -35,7 +36,6 @@ public class FAEvents {
 		}
 	}
 
-	@SubscribeEvent
 	private static void onBlockBreak(BlockEvent.BreakEvent event) {
 		Optional<Block> block = BuiltInRegistries.BLOCK.getRandomElementOf(FABlockTags.PHANTOM_RANDOM_BLOCKS, RandomSource.create()).map(Holder::value);
 

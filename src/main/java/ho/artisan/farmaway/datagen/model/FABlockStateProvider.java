@@ -36,12 +36,14 @@ public class FABlockStateProvider extends BlockStateProvider {
 		farmland(FABlocks.DIORITE_FARMLAND.get(), Blocks.DIORITE);
 		crop(FABlocks.PHANTOM_BEETROOTS.get(), 3, BlockStateProperties.AGE_7);
 		crop(FABlocks.EXPLOSION_POTATOES.get(), 3, BlockStateProperties.AGE_7);
-//		crop(FABlocks.SOFT_POTATOES.get(), 3, BlockStateProperties.AGE_7);
-//		crop(FABlocks.ROSE_POTATOES.get(), 3, BlockStateProperties.AGE_7);
+		crop(FABlocks.SOFT_POTATOES.get(), 3, BlockStateProperties.AGE_7);
+		crop(FABlocks.ROSE_POTATOES.get(), 3, BlockStateProperties.AGE_7);
 		crop(FABlocks.BLUES_CARROTS.get(), 3, BlockStateProperties.AGE_15);
 		crop(FABlocks.STRONG_CARROTS.get(), 3, BlockStateProperties.AGE_3);
-//		crop(FABlocks.PHANTOM_POTATOES.get(), 2, BlockStateProperties.AGE_3);
+		crop(FABlocks.PHANTOM_POTATOES.get(), 2, BlockStateProperties.AGE_7);
 		simpleBlock(FABlocks.PHANTOM_DIRT.get());
+		simpleBlock(FABlocks.SOLID_CLOUD.get());
+		simpleCrop(FABlocks.EMPTY_ROOT.get());
 	}
 
 	private void farmland(Block farmland, Block dirt) {
@@ -63,6 +65,11 @@ public class FABlockStateProvider extends BlockStateProvider {
 			}
 			return ConfiguredModel.builder().modelFile(models().crop(name(crop) + "_stage" + stage, blockTexture(crop).withSuffix("_stage" + stage)).renderType(CUTOUT)).build();
 		});
+	}
+
+	// non stage crop only
+	private void simpleCrop(CropBlock crop) {
+		getVariantBuilder(crop).forAllStates(state -> ConfiguredModel.builder().modelFile(models().crop(name(crop), blockTexture(crop)).renderType(CUTOUT)).build());
 	}
 
 	private ResourceLocation key(Block block) {

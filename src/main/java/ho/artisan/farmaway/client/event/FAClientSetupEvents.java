@@ -8,8 +8,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.model.BakedModelWrapper;
 
@@ -19,7 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
-@EventBusSubscriber(modid = FarmAway.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class FAClientSetupEvents {
 	public static final Map<ModelResourceLocation, Map<ItemDisplayContext, ModelResourceLocation>> ITEMS_WITH_SPECIAL_MODELS = new HashMap<>(Map.ofEntries(
 		Map.entry(ModelResourceLocation.inventory(FarmAway.getResourceLocation("enhanced_hoe")), Map.of(
@@ -32,7 +30,11 @@ public class FAClientSetupEvents {
 
 	public static final Map<ModelResourceLocation, BakedModel> BAKED_MODELS = new HashMap<>();
 
-	@SubscribeEvent
+	public static void registerEvents(IEventBus modEventBus) {
+		modEventBus.addListener(FAClientSetupEvents::onRegisterAdditionalModels);
+		modEventBus.addListener(FAClientSetupEvents::onModifyBakingResult);
+	}
+
 	private static void onRegisterAdditionalModels(ModelEvent.RegisterAdditional event) {
 		for (Map.Entry<ModelResourceLocation, Map<ItemDisplayContext, ModelResourceLocation>> entry : ITEMS_WITH_SPECIAL_MODELS.entrySet()) {
 			for (Map.Entry<ItemDisplayContext, ModelResourceLocation> entry1 : entry.getValue().entrySet()) {
@@ -41,7 +43,6 @@ public class FAClientSetupEvents {
 		}
 	}
 
-	@SubscribeEvent
 	private static void onModifyBakingResult(ModelEvent.ModifyBakingResult event) {
 		BAKED_MODELS.clear();
 		BAKED_MODELS.putAll(event.getModels());
