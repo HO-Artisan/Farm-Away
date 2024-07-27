@@ -2,18 +2,23 @@ package ho.artisan.farmaway.common.item;
 
 import ho.artisan.farmaway.common.entity.MelonRocketEntity;
 import ho.artisan.farmaway.common.registry.FAEntities;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.BlockSource;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+
+import java.util.List;
 
 public class MelonRocketItem extends Item implements ProjectileItem {
 	public MelonRocketItem(Properties properties) {
@@ -64,5 +69,11 @@ public class MelonRocketItem extends Item implements ProjectileItem {
 			(double) direction.getStepY() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getHeight() / 2.0) - (double) FAEntities.MELON_ROCKET.get().getHeight() / 2.0,
 			(double) direction.getStepZ() * (0.5000099999997474 - (double) FAEntities.MELON_ROCKET.get().getWidth() / 2.0)
 		);
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+		tooltipComponents.add(Component.translatable(getDescriptionId() + ".tooltip").withStyle(ChatFormatting.GREEN));
 	}
 }

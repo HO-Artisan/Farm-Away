@@ -34,6 +34,7 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FABlocks.PHANTOM_POTATOES.get(), "Phantom Potatoes");
 		add(FABlocks.PHANTOM_BEETROOTS.get(), "Phantom Beetroots");
 		add(FABlocks.MELON_ROCKET.get(), "Melon Rocket");
+		add(FABlocks.ROSE_POTATOES.get(), "Rose Potatoes");
 		add(FABlocks.SOFT_POTATOES.get(), "Soft Potatoes");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "Explosion Potato");
@@ -43,8 +44,12 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FAItems.STRONG_CARROT.get(), "Strong Carrot");
 		add(FAItems.PHANTOM_POTATO.get(), "Phantom Potato");
 		add(FAItems.PHANTOM_BEETROOT.get(), "Phantom Beetroot");
+		add(FAItems.PHANTOM_BEETROOT.get().getDescriptionId() + ".tooltip", "When Crouching: Can be thrown");
 		add(FAItems.MELON_ROCKET.get(), "Melon Rocket");
+		add(FAItems.MELON_ROCKET.get().getDescriptionId() + ".tooltip", "When Crouching: Can be launched");
 		add(FAItems.MELON_ROCKET_SEED.get(), "Melon Rocket Seed");
+		add(FAItems.ROSE_POTATO.get(), "Rose Potato");
+		add(FAItems.ROSE_POTATO.get().getDescriptionId() + ".tooltip", "Can accelerate crop growth");
 		add(FAItems.SOFT_POTATO.get(), "Soft Potato");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "Explosion Potato");

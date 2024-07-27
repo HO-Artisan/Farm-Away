@@ -34,6 +34,7 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FABlocks.PHANTOM_POTATOES.get(), "幻影土豆");
 		add(FABlocks.PHANTOM_BEETROOTS.get(), "幻影甜菜根");
 		add(FABlocks.MELON_ROCKET.get(), "西瓜火箭");
+		add(FABlocks.ROSE_POTATOES.get(), "玫瑰土豆");
 		add(FABlocks.SOFT_POTATOES.get(), "柔软土豆");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "爆炎土豆");
@@ -43,8 +44,12 @@ public class FAChineseLanguageProvider extends LanguageProvider {
 		add(FAItems.STRONG_CARROT.get(), "强力胡萝卜");
 		add(FAItems.PHANTOM_POTATO.get(), "幻影土豆");
 		add(FAItems.PHANTOM_BEETROOT.get(), "幻影甜菜根");
+		add(FAItems.PHANTOM_BEETROOT.get().getDescriptionId() + ".tooltip", "潜行时：可投掷");
 		add(FAItems.MELON_ROCKET.get(), "西瓜火箭");
+		add(FAItems.MELON_ROCKET.get().getDescriptionId() + ".tooltip", "潜行时：可发射");
 		add(FAItems.MELON_ROCKET_SEED.get(), "西瓜火箭种子");
+		add(FAItems.ROSE_POTATO.get(), "玫瑰土豆");
+		add(FAItems.ROSE_POTATO.get().getDescriptionId() + ".tooltip", "可加速作物生长");
 		add(FAItems.SOFT_POTATO.get(), "柔软土豆");
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "爆炎土豆");

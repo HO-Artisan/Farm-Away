@@ -1,8 +1,10 @@
 package ho.artisan.farmaway.common.item;
 
 import ho.artisan.farmaway.common.entity.PhantomBeetrootEntity;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -13,8 +15,11 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+
+import java.util.List;
 
 public class PhantomBeetrootItem extends ItemNameBlockItem implements ProjectileItem {
 	public PhantomBeetrootItem(Block block, Properties properties) {
@@ -41,5 +46,11 @@ public class PhantomBeetrootItem extends ItemNameBlockItem implements Projectile
 	@Override
 	public Projectile asProjectile(Level level, Position pos, ItemStack stack, Direction direction) {
 		return new PhantomBeetrootEntity(level, pos.x(), pos.y(), pos.z());
+	}
+
+	@Override
+	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+		super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+		tooltipComponents.add(Component.translatable(getDescriptionId() + ".tooltip").withStyle(ChatFormatting.AQUA));
 	}
 }
