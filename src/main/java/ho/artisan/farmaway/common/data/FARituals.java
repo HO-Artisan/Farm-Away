@@ -10,14 +10,14 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.List;
 
 public class FARituals {
-	public static final ResourceKey<Ritual> POTATO_RITUAL = create("potato_ritual");
+	public static final ResourceKey<Ritual> ICE_CREAM = create("ice_cream");
 
 	public static void init(BootstrapContext<Ritual> context) {
-		context.register(POTATO_RITUAL, new Ritual(
-			Blocks.POTATOES.builtInRegistryHolder(),
-			Blocks.STONE.builtInRegistryHolder(),
-			List.of(Blocks.STONE.builtInRegistryHolder()),
-			FABlocks.STONE_FARMLAND
+		context.register(ICE_CREAM, new Ritual(
+			FABlocks.EMPTY_ROOT,
+			FABlocks.SOFT_POTATOES,
+			List.of(Blocks.AIR.builtInRegistryHolder(), Blocks.FARMLAND.builtInRegistryHolder(), FABlocks.SOLID_CLOUD),
+			FABlocks.ANDESITE_FARMLAND
 		));
 	}
 

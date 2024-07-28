@@ -1,8 +1,0 @@
-{
-  "base_out": "farm_away:stone_farmland",
-  "center": "minecraft:potatoes",
-  "center_out": "minecraft:stone",
-  "ritual_base": [
-    "minecraft:stone"
-  ]
-}

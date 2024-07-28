@@ -1,6 +1,8 @@
 package ho.artisan.farmaway.common.item;
 
+import ho.artisan.farmaway.common.data.FARituals;
 import ho.artisan.farmaway.common.registry.FABlocks;
+import ho.artisan.farmaway.common.util.RitualUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
@@ -25,7 +27,7 @@ public class RosePotatoItem extends ItemNameBlockItem {
 		Level level = context.getLevel();
 		if (level.getBlockState(context.getClickedPos()).getBlock() instanceof CropBlock crop && context.getPlayer() != null) {
 			if (crop == FABlocks.EMPTY_ROOT.get()) {
-
+				RitualUtil.start(level, context.getClickedPos(), FARituals.ICE_CREAM);
 			} else if (!crop.isMaxAge(context.getLevel().getBlockState(context.getClickedPos()))) {
 				crop.growCrops(level, context.getClickedPos(), level.getBlockState(context.getClickedPos()));
 				context.getPlayer().hurt(level.damageSources().magic(), 2.0f);

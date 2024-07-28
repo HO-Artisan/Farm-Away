@@ -1,0 +1,10 @@
+{
+  "base_out": "farm_away:andesite_farmland",
+  "center": "farm_away:empty_root",
+  "center_out": "farm_away:soft_potatoes",
+  "ritual_base": [
+    "minecraft:air",
+    "minecraft:farmland",
+    "farm_away:solid_cloud"
+  ]
+}
