@@ -13,6 +13,7 @@ public class FAMobEffects {
 	public static final DeferredHolder<MobEffect, MobEffect> BLUES = MOB_EFFECTS.register("blues", () -> new MobEffect(MobEffectCategory.NEUTRAL, 0x1e197f));
 	public static final DeferredHolder<MobEffect, MobEffect> PHANTOM = MOB_EFFECTS.register("phantom", () -> new MobEffect(MobEffectCategory.NEUTRAL, 0x1e197f));
 	public static final DeferredHolder<MobEffect, MobEffect> VOID = MOB_EFFECTS.register("void", () -> new MobEffect(MobEffectCategory.NEUTRAL, 0x1e197f));
+	public static final DeferredHolder<MobEffect, MobEffect> TWIST = MOB_EFFECTS.register("twist", () -> new MobEffect(MobEffectCategory.NEUTRAL, 0x1e197f));
 
 	public static void register(IEventBus bus) {
 		MOB_EFFECTS.register(bus);

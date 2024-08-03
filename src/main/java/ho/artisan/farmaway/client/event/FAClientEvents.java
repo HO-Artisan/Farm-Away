@@ -20,5 +20,6 @@ public class FAClientEvents {
 		event.registerEntityRenderer(FAEntities.PHANTOM_BEETROOT.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(FAEntities.MELON_ROCKET.get(), MelonRocketRenderer::new);
 		event.registerEntityRenderer(FAEntities.POTATO_LASER.get(), PotatoLaserRenderer::new);
+		event.registerEntityRenderer(FAEntities.STONATO.get(), ThrownItemRenderer::new);
 	}
 }

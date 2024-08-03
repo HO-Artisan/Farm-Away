@@ -32,10 +32,15 @@ public class FABlocks {
 	public static final DeferredBlock<EmptyRootBlock> EMPTY_ROOT = BLOCKS.register("empty_root", () -> new EmptyRootBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT).randomTicks()));
 	public static final DeferredBlock<ExplosionPotatoBlock> EXPLOSION_POTATOES = BLOCKS.register("explosion_potatoes", () -> new ExplosionPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<SoftPotatoBlock> SOFT_POTATOES = BLOCKS.register("soft_potatoes", () -> new SoftPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
+	public static final DeferredBlock<StonatoBlock> STONATOES = BLOCKS.register("stonatoes", () -> new StonatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<GerberaPotatoBlock> GERBERA_POTATOES = BLOCKS.register("gerbera_potatoes", () -> new GerberaPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<RosePotatoBlock> ROSE_POTATOES = BLOCKS.register("rose_potatoes", () -> new RosePotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<PhantomBeetrootBlock> PHANTOM_BEETROOTS = BLOCKS.register("phantom_beetroots", () -> new PhantomBeetrootBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS).randomTicks()));
 	public static final DeferredBlock<BluesCarrotBlock> BLUES_CARROTS = BLOCKS.register("blues_carrots", () -> new BluesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<RodriguesCarrotBlock> RODRIGUES_CARROTS = BLOCKS.register("rodrigues_carrots", () -> new RodriguesCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<DrillCarrotBlock> DRILL_CARROTS = BLOCKS.register("drill_carrots", () -> new DrillCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<DistortedCarrotBlock> DISTORTED_CARROTS = BLOCKS.register("distorted_carrots", () -> new DistortedCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
+	public static final DeferredBlock<HotCarrotBlock> HOT_CARROTS = BLOCKS.register("hot_carrots", () -> new HotCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<PhantomPotatoBlock> PHANTOM_POTATOES = BLOCKS.register("phantom_potatoes", () -> new PhantomPotatoBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POTATOES).randomTicks()));
 	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROTS = BLOCKS.register("strong_carrots", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	public static final DeferredBlock<MelonRocketBlock> MELON_ROCKET = BLOCKS.register("melon_rocket", () -> new MelonRocketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM).randomTicks()));

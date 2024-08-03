@@ -35,7 +35,8 @@ public class FAItemTagsProvider extends ItemTagsProvider {
 			FAItems.PHANTOM_BEETROOT.get()
 		);
 		tag(FAItemTags.WIND_SEEDS).add(
-			FAItems.MELON_ROCKET_SEED.get()
+			FAItems.MELON_ROCKET_SEED.get(),
+			FAItems.RODRIGUES_CARROT.get()
 		);
 		tag(FAItemTags.RAY_SEEDS).add(
 			FAItems.GERBERA_POTATO.get()

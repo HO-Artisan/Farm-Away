@@ -36,6 +36,11 @@ public class FAItemModelProvider extends ItemModelProvider {
 		basicItem(FAItems.SOFT_POTATO.get());
 		basicItem(FAItems.PHANTOM_POTATO.get());
 		basicItem(FAItems.ROSE_POTATO.get());
+		basicItem(FAItems.DRILL_CARROT.get());
+		basicItem(FAItems.STONATO.get());
+		basicItem(FAItems.RODRIGUES_CARROT.get());
+		basicItem(FAItems.HOT_CARROT.get());
+		basicItem(FAItems.DISTORTED_CARROT.get());
 		basicItem(FAItems.PHANTOM_BEETROOT.get());
 		handheld(FAItems.STRONG_CARROT.get());
 	}
