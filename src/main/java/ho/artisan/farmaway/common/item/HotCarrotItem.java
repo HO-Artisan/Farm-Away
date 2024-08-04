@@ -29,6 +29,7 @@ public class HotCarrotItem extends ItemNameBlockItem {
 
 	@Override
 	public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity livingEntity) {
-		return super.finishUsingItem(stack, level, livingEntity);
+		FoodProperties foodproperties = stack.getFoodProperties(livingEntity);
+		return foodproperties != null ? livingEntity.eat(level, stack, foodproperties) : stack;
 	}
 }

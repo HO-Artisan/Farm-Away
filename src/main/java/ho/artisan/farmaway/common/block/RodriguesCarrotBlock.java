@@ -10,7 +10,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class RodriguesCarrotBlock extends FACropBlock {
 	public static final MapCodec<RodriguesCarrotBlock> CODEC = simpleCodec(RodriguesCarrotBlock::new);
-	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{ Block.box(0.0, 0.0, 0.0, 16.0, 9.0, 16.0) };
 
 	public MapCodec<RodriguesCarrotBlock> codec() {
 		return CODEC;
@@ -19,14 +18,12 @@ public class RodriguesCarrotBlock extends FACropBlock {
 		super(properties);
 	}
 
-	/*
 	@Override
 	public int getMaxAge() {
 		return 0;
 	}
-	 */
 
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return SHAPE_BY_AGE[this.getAge(state)];
+		return Block.box(0.0, 0.0, 0.0, 16.0, 9.0, 16.0);
 	}
 }

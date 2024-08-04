@@ -40,9 +40,9 @@ public class RodriguesCarrotItem extends Item {
 			float f3 = -Mth.sin(xRot * 0.017453292F);
 			float f4 = Mth.cos(yRot * 0.017453292F) * Mth.cos(xRot * 0.017453292F);
 			float f5 = Mth.sqrt(f2 * f2 + f3 * f3 + f4 * f4);
-			f2 *= 4.0f / f5 * 2.0f;
-			f3 *= 4.0f / f5 * 2.0f;
-			f4 *= 4.0f / f5 * 2.0f;
+			f2 *= 3.0f / f5;
+			f3 *= 3.0f / f5;
+			f4 *= 3.0f / f5;
 			player.push(f2, f3, f4);
 			player.startAutoSpinAttack(10, 8.0F, stack);
 			if (player.onGround()) {
