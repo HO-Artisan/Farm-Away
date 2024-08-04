@@ -64,6 +64,13 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 			Blocks.TNT,
 			Blocks.ANCIENT_DEBRIS
 		);
-		tag(FABlockTags.FARMLANDS).addTags(FABlockTags.TERRA_FARMLANDS, FABlockTags.FLAME_FARMLANDS, FABlockTags.SHADOW_FARMLANDS, FABlockTags.SCARLET_FARMLANDS, FABlockTags.RAY_FARMLANDS, FABlockTags.WIND_FARMLANDS);
+		tag(FABlockTags.FARMLANDS).addTags(
+			FABlockTags.TERRA_FARMLANDS,
+			FABlockTags.FLAME_FARMLANDS,
+			FABlockTags.SHADOW_FARMLANDS,
+			FABlockTags.SCARLET_FARMLANDS,
+			FABlockTags.RAY_FARMLANDS,
+			FABlockTags.WIND_FARMLANDS
+		);
 	}
 }

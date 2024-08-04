@@ -1,7 +1,7 @@
-// 1.21	2024-07-26T18:40:32.3926357	Tags for minecraft:item mod id farm_away
+// 1.21	2024-08-04T09:45:28.7917635	Tags for minecraft:item mod id farm_away
 e8d9c8ae63868fdfe355432e839d26e1ba3519d3 data/farm_away/tags/item/seeds/flame.json
 ef749cfd2361f335c4b9c27bb60d856250f4e979 data/farm_away/tags/item/seeds/ray.json
 eba2aa568ed368bf4debd5935e2b22c25b5f6b6a data/farm_away/tags/item/seeds/shadow.json
-d7051636223aa40e8698d4368be76973efb48ebb data/farm_away/tags/item/seeds/wind.json
+f9e5dcd8cdd2f9aeb18a1351e63a29611bf04952 data/farm_away/tags/item/seeds/wind.json
 f2c6401609ba18572083a8acd9c36df9c6f2d8b3 data/minecraft/tags/item/hoes.json
 d1ea4fd4f335a246cf541b96de4eec1cb66eebfb data/minecraft/tags/item/swords.json

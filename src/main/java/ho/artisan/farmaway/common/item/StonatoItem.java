@@ -8,17 +8,33 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
 public class StonatoItem extends ItemNameBlockItem implements ProjectileItem {
 	public StonatoItem(Block block, Properties properties) {
-		super(block, properties);
+		super(block, properties.attributes(modifiers()));
+	}
+
+	private static ItemAttributeModifiers modifiers() {
+		return ItemAttributeModifiers.builder().add(
+			Attributes.ATTACK_DAMAGE,
+			new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 2.0d, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.MAINHAND
+		).add(
+			Attributes.ATTACK_SPEED,
+			new AttributeModifier(BASE_ATTACK_SPEED_ID, 1.0d, AttributeModifier.Operation.ADD_VALUE),
+			EquipmentSlotGroup.MAINHAND
+		).build();
 	}
 
 	@Override

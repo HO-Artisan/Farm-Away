@@ -19,7 +19,7 @@ public class HotCarrotItem extends ItemNameBlockItem {
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand usedHand) {
 		ItemStack itemstack = player.getItemInHand(usedHand);
 		FoodProperties foodproperties = itemstack.getFoodProperties(player);
-		if (player.canEat(foodproperties.canAlwaysEat())) {
+		if (foodproperties != null && player.canEat(foodproperties.canAlwaysEat())) {
 			player.startUsingItem(usedHand);
 			return InteractionResultHolder.consume(itemstack);
 		} else {

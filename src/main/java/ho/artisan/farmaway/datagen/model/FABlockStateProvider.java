@@ -16,7 +16,7 @@ import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class FABlockStateProvider extends BlockStateProvider {
-	// render types
+	//Render Types
 	private static final ResourceLocation SOLID = ResourceLocation.withDefaultNamespace("solid");
 	private static final ResourceLocation CUTOUT = ResourceLocation.withDefaultNamespace("cutout");
 	private static final ResourceLocation CUTOUT_MIPPED = ResourceLocation.withDefaultNamespace("cutout_mipped");

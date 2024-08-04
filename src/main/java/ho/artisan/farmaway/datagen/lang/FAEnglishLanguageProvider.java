@@ -15,32 +15,9 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		super(output, FarmAway.MOD_ID, "en_us");
 	}
 
-	@Override
-	protected void addTranslations() {
-		add("fml.menu.mods.info.description." + FarmAway.MOD_ID, "A magic mod about farming!");
-
-		add(FarmAway.descriptionId("itemGroup", "main"), "Farm Away");
+	protected void itemTranslations() {
 		add(FAItems.ENHANCED_HOE.get(), "Enhanced Hoe");
 		add(FAItems.ENHANCED_HOE.get().getDescriptionId() + ".tooltip", "Able to Till:");
-		add(FABlocks.STONE_FARMLAND.get(), "Stone Farmland");
-		add(FABlocks.NETHERRACK_FARMLAND.get(), "Netherrack Farmland");
-		add(FABlocks.END_STONE_FARMLAND.get(), "End Stone Farmland");
-		add(FABlocks.GRANITE_FARMLAND.get(), "Granite Farmland");
-		add(FABlocks.ANDESITE_FARMLAND.get(), "Andesite Farmland");
-		add(FABlocks.DIORITE_FARMLAND.get(), "Diorite Farmland");
-		add(FABlocks.PHANTOM_DIRT.get(), "Phantom Dirt");
-		add(FABlocks.SOLID_CLOUD.get(), "Solid Cloud");
-		add(FABlocks.EMPTY_ROOT.get(), "Empty Root");
-
-		add(FABlocks.EXPLOSION_POTATOES.get(), "Explosion Potatoes");
-		add(FABlocks.GERBERA_POTATOES.get(), "Gerbera Potatoes");
-		add(FABlocks.BLUES_CARROTS.get(), "Blues Carrots");
-		add(FABlocks.STRONG_CARROTS.get(), "Strong Carrots");
-		add(FABlocks.PHANTOM_POTATOES.get(), "Phantom Potatoes");
-		add(FABlocks.PHANTOM_BEETROOTS.get(), "Phantom Beetroots");
-		add(FABlocks.MELON_ROCKET.get(), "Melon Rocket");
-		add(FABlocks.ROSE_POTATOES.get(), "Rose Potatoes");
-		add(FABlocks.SOFT_POTATOES.get(), "Soft Potatoes");
 
 		add(FAItems.EXPLOSION_POTATO.get(), "Explosion Potato");
 		add(FAItems.EXPLOSION_POTATO.get().getDescriptionId() + ".tooltip", "When Crouching: Can be thrown");
@@ -57,6 +34,42 @@ public class FAEnglishLanguageProvider extends LanguageProvider {
 		add(FAItems.ROSE_POTATO.get(), "Rose Potato");
 		add(FAItems.ROSE_POTATO.get().getDescriptionId() + ".tooltip", "Can accelerate crop growth");
 		add(FAItems.SOFT_POTATO.get(), "Soft Potato");
+	}
+
+	protected void blockTranslations() {
+		//Farmland
+		add(FABlocks.STONE_FARMLAND.get(), "Stone Farmland");
+		add(FABlocks.NETHERRACK_FARMLAND.get(), "Netherrack Farmland");
+		add(FABlocks.END_STONE_FARMLAND.get(), "End Stone Farmland");
+		add(FABlocks.GRANITE_FARMLAND.get(), "Granite Farmland");
+		add(FABlocks.ANDESITE_FARMLAND.get(), "Andesite Farmland");
+		add(FABlocks.DIORITE_FARMLAND.get(), "Diorite Farmland");
+		add(FABlocks.PHANTOM_DIRT.get(), "Phantom Dirt");
+		add(FABlocks.SOLID_CLOUD.get(), "Solid Cloud");
+		add(FABlocks.EMPTY_ROOT.get(), "Empty Root");
+		//Potato
+		add(FABlocks.EXPLOSION_POTATOES.get(), "Explosion Potatoes");
+		add(FABlocks.GERBERA_POTATOES.get(), "Gerbera Potatoes");
+		add(FABlocks.PHANTOM_POTATOES.get(), "Phantom Potatoes");
+		add(FABlocks.ROSE_POTATOES.get(), "Rose Potatoes");
+		add(FABlocks.SOFT_POTATOES.get(), "Soft Potatoes");
+		//Carrot
+		add(FABlocks.BLUES_CARROTS.get(), "Blues Carrots");
+		add(FABlocks.STRONG_CARROTS.get(), "Strong Carrots");
+		//Beetroot
+		add(FABlocks.PHANTOM_BEETROOTS.get(), "Phantom Beetroots");
+		//Melon
+		add(FABlocks.MELON_ROCKET.get(), "Melon Rocket");
+	}
+
+	@Override
+	protected void addTranslations() {
+		add("fml.menu.mods.info.description." + FarmAway.MOD_ID, "A magic mod about farming!");
+
+		add(FarmAway.descriptionId("itemGroup", "main"), "Farm Away");
+
+		itemTranslations();
+		blockTranslations();
 
 		add(FAEntities.EXPLOSION_POTATO.get(), "Explosion Potato");
 		add(FAEntities.PHANTOM_BEETROOT.get(), "Phantom Beetroot");

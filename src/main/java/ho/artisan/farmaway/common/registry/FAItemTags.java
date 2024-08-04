@@ -7,11 +7,11 @@ import net.minecraft.world.item.Item;
 
 public class FAItemTags {
 	public static TagKey<Item> TERRA_SEEDS = create("seeds/terra");
-	public static TagKey<Item> FLAME_SEEDS = create("seeds/flame");
-	public static TagKey<Item> SHADOW_SEEDS = create("seeds/shadow");
+	public static final TagKey<Item> FLAME_SEEDS = create("seeds/flame");
+	public static final TagKey<Item> SHADOW_SEEDS = create("seeds/shadow");
 	public static TagKey<Item> SCARLET_SEEDS = create("seeds/scarlet");
-	public static TagKey<Item> RAY_SEEDS = create("seeds/ray");
-	public static TagKey<Item> WIND_SEEDS = create("seeds/wind");
+	public static final TagKey<Item> RAY_SEEDS = create("seeds/ray");
+	public static final TagKey<Item> WIND_SEEDS = create("seeds/wind");
 
 	public static TagKey<Item> create(String name) {
 		return TagKey.create(Registries.ITEM, FarmAway.getResourceLocation(name));

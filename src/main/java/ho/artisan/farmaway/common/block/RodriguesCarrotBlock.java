@@ -19,10 +19,12 @@ public class RodriguesCarrotBlock extends FACropBlock {
 		super(properties);
 	}
 
+	/*
 	@Override
 	public int getMaxAge() {
 		return 0;
 	}
+	 */
 
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		return SHAPE_BY_AGE[this.getAge(state)];

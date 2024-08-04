@@ -19,6 +19,7 @@ public class FAItemModelProvider extends ItemModelProvider {
 	@Override
 	protected void registerModels() {
 		inventoryHandheld(FAItems.ENHANCED_HOE.get());
+
 		block(FAItems.STONE_FARMLAND.get());
 		block(FAItems.NETHERRACK_FARMLAND.get());
 		block(FAItems.END_STONE_FARMLAND.get());
@@ -27,22 +28,27 @@ public class FAItemModelProvider extends ItemModelProvider {
 		block(FAItems.ANDESITE_FARMLAND.get());
 		block(FAItems.PHANTOM_DIRT.get());
 		block(FAItems.SOLID_CLOUD.get());
+
 		handheld(FAItems.EMPTY_ROOT.get());
+		//Potato
 		basicItem(FAItems.EXPLOSION_POTATO.get());
 		basicItem(FAItems.GERBERA_POTATO.get());
-		basicItem(FAItems.BLUES_CARROT.get());
-		basicItem(FAItems.MELON_ROCKET.get());
-		basicItem(FAItems.MELON_ROCKET_SEED.get());
 		basicItem(FAItems.SOFT_POTATO.get());
 		basicItem(FAItems.PHANTOM_POTATO.get());
 		basicItem(FAItems.ROSE_POTATO.get());
-		basicItem(FAItems.DRILL_CARROT.get());
 		basicItem(FAItems.STONATO.get());
+		//Carrot
+		basicItem(FAItems.BLUES_CARROT.get());
+		basicItem(FAItems.DRILL_CARROT.get());
 		basicItem(FAItems.RODRIGUES_CARROT.get());
 		basicItem(FAItems.HOT_CARROT.get());
 		basicItem(FAItems.DISTORTED_CARROT.get());
-		basicItem(FAItems.PHANTOM_BEETROOT.get());
 		handheld(FAItems.STRONG_CARROT.get());
+		//Melon
+		basicItem(FAItems.MELON_ROCKET.get());
+		basicItem(FAItems.MELON_ROCKET_SEED.get());
+		//Beetroot
+		basicItem(FAItems.PHANTOM_BEETROOT.get());
 	}
 
 	private void block(Item item) {
@@ -65,12 +71,13 @@ public class FAItemModelProvider extends ItemModelProvider {
 			.texture("layer0", itemTexture(item) + "_inventory");
 	}
 
-	public ResourceLocation itemTexture(Item item) {
+	private ResourceLocation itemTexture(Item item) {
 		ResourceLocation name = key(item);
 		return texture(name, ModelProvider.ITEM_FOLDER);
 	}
 
-	public ResourceLocation texture(ResourceLocation key, String prefix) {
+	@SuppressWarnings("SameParameterValue")
+	private ResourceLocation texture(ResourceLocation key, String prefix) {
 		return ResourceLocation.fromNamespaceAndPath(key.getNamespace(), prefix + "/" + key.getPath());
 	}
 
