@@ -155,6 +155,9 @@ public class FarmlandBlock extends Block {
 		if (this.defaultBlockState().is(FABlockTags.WIND_FARMLANDS)) {
 			return Type.WIND;
 		}
+		if (this.defaultBlockState().is(FABlockTags.FROZEN_FARMLANDS)) {
+			return Type.FROZEN;
+		}
 		throw new RuntimeException("Find a farmland without a type");
 	}
 
@@ -164,7 +167,8 @@ public class FarmlandBlock extends Block {
 		SHADOW(ResourceLocation.withDefaultNamespace("end_stone")),
 		SCARLET(ResourceLocation.withDefaultNamespace("granite")),
 		RAY(ResourceLocation.withDefaultNamespace("andesite")),
-		WIND(ResourceLocation.withDefaultNamespace("diorite"));
+		WIND(ResourceLocation.withDefaultNamespace("diorite")),
+		FROZEN(ResourceLocation.withDefaultNamespace("blue_ice"));
 
 		private final ResourceLocation originalBlockId;
 

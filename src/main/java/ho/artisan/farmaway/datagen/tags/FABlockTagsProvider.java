@@ -51,6 +51,7 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 		tag(FABlockTags.SCARLET_FARMLANDS).add(FABlocks.GRANITE_FARMLAND.get());
 		tag(FABlockTags.RAY_FARMLANDS).add(FABlocks.ANDESITE_FARMLAND.get());
 		tag(FABlockTags.WIND_FARMLANDS).add(FABlocks.DIORITE_FARMLAND.get());
+		tag(FABlockTags.FROZEN_FARMLANDS).add(FABlocks.FROZEN_FARMLAND.get());
 		tag(FABlockTags.PHANTOM_RANDOM_BLOCKS).add(
 			Blocks.AMETHYST_CLUSTER,
 			Blocks.DIAMOND_BLOCK,
@@ -70,7 +71,8 @@ public class FABlockTagsProvider extends BlockTagsProvider {
 			FABlockTags.SHADOW_FARMLANDS,
 			FABlockTags.SCARLET_FARMLANDS,
 			FABlockTags.RAY_FARMLANDS,
-			FABlockTags.WIND_FARMLANDS
+			FABlockTags.WIND_FARMLANDS,
+			FABlockTags.FROZEN_FARMLANDS
 		);
 	}
 }

@@ -13,6 +13,7 @@ public class FABlockTags {
 	public static final TagKey<Block> SCARLET_FARMLANDS = blockTag("farmlands/scarlet");
 	public static final TagKey<Block> RAY_FARMLANDS = blockTag("farmlands/ray");
 	public static final TagKey<Block> WIND_FARMLANDS = blockTag("farmlands/wind");
+	public static final TagKey<Block> FROZEN_FARMLANDS = blockTag("farmlands/frozen");
 
 	public static final TagKey<Block> TERRA_CROPS = blockTag("crops/terra");
 	public static final TagKey<Block> FLAME_CROPS = blockTag("crops/flame");

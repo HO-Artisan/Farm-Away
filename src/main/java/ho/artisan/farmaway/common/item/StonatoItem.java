@@ -28,11 +28,11 @@ public class StonatoItem extends ItemNameBlockItem implements ProjectileItem {
 	private static ItemAttributeModifiers modifiers() {
 		return ItemAttributeModifiers.builder().add(
 			Attributes.ATTACK_DAMAGE,
-			new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 2.0d, AttributeModifier.Operation.ADD_VALUE),
+			new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 1.0d, AttributeModifier.Operation.ADD_VALUE),
 			EquipmentSlotGroup.MAINHAND
 		).add(
 			Attributes.ATTACK_SPEED,
-			new AttributeModifier(BASE_ATTACK_SPEED_ID, 1.0d, AttributeModifier.Operation.ADD_VALUE),
+			new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.4d, AttributeModifier.Operation.ADD_VALUE),
 			EquipmentSlotGroup.MAINHAND
 		).build();
 	}

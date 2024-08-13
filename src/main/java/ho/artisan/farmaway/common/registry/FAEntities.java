@@ -11,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class FAEntities {
 	private static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, FarmAway.MOD_ID);
+
 	public static final DeferredHolder<EntityType<?>, EntityType<ExplosionPotatoEntity>> EXPLOSION_POTATO = ENTITIES.register("explosion_potato", () -> EntityType.Builder.<ExplosionPotatoEntity>of(ExplosionPotatoEntity::new, MobCategory.MISC).build(FarmAway.getResourceLocation("explosion_potato").toString()));
 	public static final DeferredHolder<EntityType<?>, EntityType<PhantomBeetrootEntity>> PHANTOM_BEETROOT = ENTITIES.register("phantom_beetroot", () -> EntityType.Builder.<PhantomBeetrootEntity>of(PhantomBeetrootEntity::new, MobCategory.MISC).build(FarmAway.getResourceLocation("phantom_beetroot").toString()));
 	public static final DeferredHolder<EntityType<?>, EntityType<MelonRocketEntity>> MELON_ROCKET = ENTITIES.register("melon_rocket", () -> EntityType.Builder.<MelonRocketEntity>of(MelonRocketEntity::new, MobCategory.MISC).build(FarmAway.getResourceLocation("melon_rocket").toString()));

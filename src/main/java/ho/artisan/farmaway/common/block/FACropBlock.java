@@ -21,6 +21,7 @@ public class FACropBlock extends CropBlock {
 				case SCARLET -> this.builtInRegistryHolder().is(FABlockTags.SCARLET_CROPS);
 				case RAY -> this.builtInRegistryHolder().is(FABlockTags.RAY_CROPS);
 				case WIND -> this.builtInRegistryHolder().is(FABlockTags.WIND_CROPS);
+				case FROZEN -> this.builtInRegistryHolder().is(FABlockTags.FROZEN_FARMLANDS);
 			};
 		}
 		return false;

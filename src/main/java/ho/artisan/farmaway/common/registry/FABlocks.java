@@ -2,6 +2,9 @@ package ho.artisan.farmaway.common.registry;
 
 import ho.artisan.farmaway.FarmAway;
 import ho.artisan.farmaway.common.block.*;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,7 +30,7 @@ public class FABlocks {
 	public static final DeferredBlock<FarmlandBlock> GRANITE_FARMLAND = registerFarmland("granite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.GRANITE).randomTicks());
 	public static final DeferredBlock<FarmlandBlock> ANDESITE_FARMLAND = registerFarmland("andesite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE).randomTicks());
 	public static final DeferredBlock<FarmlandBlock> DIORITE_FARMLAND = registerFarmland("diorite_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.DIORITE).randomTicks());
-
+	public static final DeferredBlock<FarmlandBlock> FROZEN_FARMLAND = registerFarmland("frozen_farmland", BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_ICE).randomTicks());
 	// Crops
 	public static final DeferredBlock<EmptyRootBlock> EMPTY_ROOT = BLOCKS.register("empty_root", () -> new EmptyRootBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT).randomTicks()));
 	//Potatoes
@@ -48,7 +51,9 @@ public class FABlocks {
 	public static final DeferredBlock<StrongCarrotBlock> STRONG_CARROTS = BLOCKS.register("strong_carrots", () -> new StrongCarrotBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CARROTS).randomTicks()));
 	//Melons
 	public static final DeferredBlock<MelonRocketBlock> MELON_ROCKET = BLOCKS.register("melon_rocket", () -> new MelonRocketBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM).randomTicks()));
-
+	public static final DeferredBlock<FrozenMelonBlock> FROZEN_MELON = BLOCKS.register("frozen_melon", () -> new FrozenMelonBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON).randomTicks()));
+	public static final DeferredBlock<AttachedMelonStemBlock> ATTACHED_FROZEN_MELON_STEM = BLOCKS.register("attached_frozen_melon_stem", () -> new AttachedMelonStemBlock("frozen", BlockBehaviour.Properties.ofFullCopy(Blocks.ATTACHED_MELON_STEM)));
+	public static final DeferredBlock<MelonStemBlock> FROZEN_MELON_STEM = BLOCKS.register("frozen_melon_stem", () -> new MelonStemBlock("frozen", BlockBehaviour.Properties.ofFullCopy(Blocks.MELON_STEM)));
 	// Commons
 	public static final DeferredBlock<Block> PHANTOM_DIRT = BLOCKS.register("phantom_dirt", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
 	public static final DeferredBlock<Block> SOLID_CLOUD = BLOCKS.register("solid_cloud", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_WOOL)));
@@ -59,5 +64,13 @@ public class FABlocks {
 
 	public static void register(IEventBus bus) {
 		BLOCKS.register(bus);
+	}
+
+	public static ResourceKey<Block> blockKey(String id) {
+		return ResourceKey.create(Registries.BLOCK, FarmAway.getResourceLocation(id));
+	}
+
+	public static ResourceKey<Item> itemKey(String id) {
+		return ResourceKey.create(Registries.ITEM, FarmAway.getResourceLocation(id));
 	}
 }
